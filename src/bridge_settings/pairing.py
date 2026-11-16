@@ -46,7 +46,7 @@ class CredentialStore:
     Old credentials and ledgers are never overwritten. A crash before pointer
     replacement leaves the former config intact; after replacement both files
     are already durable. Private generations must never enter a synced folder.
-    The production constructor will use the existing LOCALAPPDATA profile only.
+    Production resolves this directory from the explicit portable machine layout.
     """
     def __init__(self, directory):
         self.directory = Path(directory).resolve()
@@ -75,7 +75,7 @@ class CredentialStore:
             os.fsync(output.fileno())
         config = dict(protocol=PROTOCOL, bridge_url=bridge_url_for(credential.device_id),
                       device_id=credential.device_id, environment='hardware',
-                      token_file=str(token_path), quota_enforced=False,
+                      token_file=token_path.relative_to(self.directory).as_posix(), quota_enforced=False,
                       run_until=None, max_messages=None, max_connections=None)
         target = self.directory / 'cloud_config.json'
         temp = private / 'config.tmp'
@@ -90,7 +90,8 @@ class CredentialStore:
 def permitted_token_path(directory, token_path):
     """Keep legacy token, or an exact generated path; reject path escapes."""
     directory = Path(directory).resolve()
-    token_path = Path(token_path).resolve()
+    token_path = Path(token_path)
+    token_path = (token_path if token_path.is_absolute() else directory/token_path).resolve()
     if token_path == directory / 'private' / 'device_token.txt':
         return True
     try:

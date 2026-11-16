@@ -1,6 +1,9 @@
 """Actual packaged EXE, isolated fake profiles/ports only. Never hardware mode."""
 import argparse,json,os,shutil,subprocess,tempfile,time,urllib.error,urllib.request
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
+from version import PRODUCT_VERSION
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('exe',type=Path);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
@@ -37,8 +40,8 @@ def main():
                 log=request('/api/local-log/state')
                 assert log['logging']['active'] and log['logging']['committed']>0
                 request('/api/local-log/enabled',{'enabled':False})
-                caps=request('/api/capabilities');assert caps['version']=='1.0.0'
-                updates=request('/api/updates/state');assert updates['current']=='1.0.0'
+                caps=request('/api/capabilities');assert caps['version']==PRODUCT_VERSION
+                updates=request('/api/updates/state');assert updates['current']==PRODUCT_VERSION
                 results.append(dict(channels=count,port=port,simulation=True,samples=state['seq'],rows=log['logging']['committed'],real_parameter_writes=0,version=caps['version']))
             finally:
                 # Only our disposable copied fake EXE tree is terminated. No real

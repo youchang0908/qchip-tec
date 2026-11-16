@@ -5,6 +5,7 @@ import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from product_model import ProductModel
+from model_fixture import isolated_model
 from hardware_readonly.source import SourceCache, Rejected
 from hardware_control.wire import Wire
 from hardware_control import PROTOCOL
@@ -12,7 +13,7 @@ from hardware_control import PROTOCOL
 
 class ColdStartTests(unittest.TestCase):
     def test_discovery_wait_and_old_view_selection_are_not_commands(self):
-        model=ProductModel(simulation=True,sim_channels=1)
+        model=isolated_model(self,simulation=True,sim_channels=1)
         cache=SourceCache()
         def accept():
             raw=json.loads(json.dumps(model.snapshot()))

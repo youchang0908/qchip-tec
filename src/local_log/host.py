@@ -16,9 +16,8 @@ PROTOCOL = 'qchip.tec.local-log.v1'
 
 
 def default_root(settings_path, simulation=False):
-    # Production database/WAL must never live in the synced project data-dir.
-    namespace=hashlib.sha256(str(Path(settings_path or '.').resolve()).encode('utf-8')).hexdigest()[:16]
-    return Path(os.environ['LOCALAPPDATA'])/'QchipTEC'/'LocalLogs'/(('simulation-' if simulation else 'hardware-')+namespace)
+    if settings_path is None:raise ValueError('本地历史须显式指定配置目录')
+    return Path(settings_path).resolve().parent/'history'
 
 
 def finite(value):return value if type(value) in (int,float) and math.isfinite(value) else None

@@ -1,22 +1,32 @@
 #requires -Version 5.1
-param([switch]$NoLaunch)
+param([switch]$NoLaunch, [string]$InstallDir)
 
 # Public first-install bootstrap. Existing installations use the app updater.
 function Install-QchipTec {
-    param([switch]$NoLaunch)
+    param([switch]$NoLaunch, [string]$InstallDir)
     $ErrorActionPreference = 'Stop'
     if ([Environment]::OSVersion.Platform -ne 'Win32NT' -or
         -not [Environment]::Is64BitOperatingSystem) {
         throw 'Qchip TEC requires 64-bit Windows.'
     }
 
-    $parent = Join-Path $env:LOCALAPPDATA 'Programs'
-    $target = Join-Path $parent 'QchipTEC'
+    $chosen = if ([string]::IsNullOrWhiteSpace($InstallDir)) { Join-Path (Get-Location).Path 'Qchip-TEC' } else { $InstallDir }
+    $target = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($chosen)
+    $target = [IO.Path]::GetFullPath($target)
+    $parent = [IO.Path]::GetDirectoryName($target)
     if (Test-Path -LiteralPath $target) {
         Write-Host "Qchip TEC install folder already exists: $target"
         Write-Host 'Use Check for updates inside the app. No files were changed.'
         return
     }
+
+    # Fail locally before spending time downloading a package to an unwritable path.
+    $probe = Join-Path $parent ('.qchip-write-' + [Guid]::NewGuid().ToString('N'))
+    try {
+        $null = New-Item -ItemType Directory -Path $parent -Force
+        [IO.File]::WriteAllText($probe, '')
+    } catch { throw "Installation path is not writable: $target. Choose another -InstallDir. $($_.Exception.Message)" }
+    finally { if (Test-Path -LiteralPath $probe -PathType Leaf) { Remove-Item -LiteralPath $probe -Force } }
 
     $repository = 'youchang0908/qchip-tec'
     $headers = @{ 'User-Agent' = 'QchipTEC-Installer'; Accept = 'application/vnd.github+json' }
@@ -131,4 +141,4 @@ function Install-QchipTec {
     if (-not $NoLaunch) { Start-Process -FilePath $exe -WorkingDirectory $target }
 }
 
-Install-QchipTec -NoLaunch:$NoLaunch
+Install-QchipTec -NoLaunch:$NoLaunch -InstallDir $InstallDir

@@ -35,7 +35,7 @@ export function SettingsDialog({settings, state, channelIds=[], logging, save, c
     const next=e.key==='Home'?0:e.key==='End'?sections.length-1:(index+(['ArrowUp','ArrowLeft'].includes(e.key)?-1:1)+sections.length)%sections.length;
     setSection(sections[next][0]);tabs.current.querySelectorAll('[role=tab]')[next].focus();
   };
-  return <dialog ref={dialog} className="settings-dialog settings-workspace" data-section={section} aria-labelledby="settings-title" onClose={close} onCancel={e=>{if(busy||cloudBusy)e.preventDefault();}}>
+  return <dialog ref={dialog} className="settings-dialog settings-workspace" data-section={section} aria-labelledby="settings-title" onClose={event=>{if(event.target===event.currentTarget)close();}} onCancel={e=>{if(e.target===e.currentTarget&&(busy||cloudBusy))e.preventDefault();}}>
     <form onSubmit={async e=>{e.preventDefault();if(cloudBusy)return;setBusy(true);setError('');try{await save({...draft,log_enabled:state.settings.log_enabled,recording_dir:state.settings.recording_dir,filename_prefix:state.settings.filename_prefix},{thermalColors:draftThermalColors,nativeStorage:logDraft});close();}catch(e){setError(e.message);}finally{setBusy(false);}}}>
       <div className="settings-heading"><h2 id="settings-title"><Settings size={19}/>设置</h2><button type="button" className="icon-button" aria-label="关闭设置" onClick={close} disabled={busy||cloudBusy}><X size={17}/></button></div>
       <div className="settings-layout">

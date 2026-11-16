@@ -7,6 +7,8 @@ node_modules/
 *.sqlite*
 .runtime/
 TEC_data/
+data/
+log/
 profiles/
 private/
 build/

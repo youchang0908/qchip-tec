@@ -60,8 +60,11 @@ def apply(plan,wait=wait_pids,replace=os.replace):
     m=validate_manifest(plan['manifest'],plan['manifest'].get('version'))
     if version(m['version'])<=version(PRODUCT_VERSION):raise ValueError('更新版本必须高于当前版本')
     target=regular_path(plan['target']);stage=regular_path(plan['staged'])
-    if not target.is_dir() or not stage.is_dir() or target==stage or target in stage.parents or stage in target.parents:
+    if not target.is_dir() or not stage.is_dir() or target==stage or stage in target.parents:
         raise ValueError('更新目标与暂存目录无效')
+    if target in stage.parents:
+        try:stage.relative_to(target/'data')
+        except ValueError:raise ValueError('安装根内的暂存目录须位于 data 下') from None
     old=target/'Qchip TEC.exe'
     if not old.is_file() or digest(old)!=plan['old_sha256']:raise ValueError('当前程序已改变，取消更新')
     names=[f['path'] for f in m['files']]

@@ -9,7 +9,47 @@
 .qchip-tec .tec-log-page .curve-channels input{width:16px;height:16px;margin:0}
 .qchip-tec .tec-log-page .custom-range{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px;margin:0 0 20px}
 .qchip-tec .tec-log-page .custom-range label{display:flex;flex-direction:column;gap:7px;font-size:13px}
-.qchip-tec .tec-log-page .custom-range input{width:250px;font-size:13px}
+.qchip-tec .tec-log-page .datetime-field{min-width:0}
+.qchip-tec .tec-log-page .datetime-label{display:block;margin-bottom:7px;font-size:13px}
+.qchip-tec .tec-log-page .datetime-trigger{display:flex;align-items:center;gap:10px;min-height:46px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:13px;text-align:left}
+.qchip-tec .tec-log-page .datetime-trigger>svg:first-child{color:var(--muted)}
+.qchip-tec .tec-log-page .datetime-trigger>svg:last-child{color:var(--muted);margin-left:8px}
+.qchip-tec .tec-log-page .datetime-trigger>span{display:flex;align-items:baseline;gap:12px;font-variant-numeric:tabular-nums}
+.qchip-tec .tec-log-page .datetime-trigger b{font-weight:500}
+.qchip-tec .tec-log-page .datetime-trigger small{font-size:11px;color:var(--muted)}
+.qchip-tec .tec-log-page .datetime-trigger:hover,.qchip-tec .tec-log-page .datetime-trigger[aria-expanded=true]{border-color:var(--green);background:var(--green-soft)}
+.qchip-tec .tec-log-page .datetime-panel{position:fixed;inset:auto;margin:0;width:352px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);font:13px/1.5 var(--sans);box-shadow:0 12px 36px #152b2026}
+.qchip-tec .tec-log-page .datetime-panel::backdrop{background:transparent}
+.qchip-tec .tec-log-page .datetime-panel-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.qchip-tec .tec-log-page .datetime-panel-heading strong{font-size:14px;font-weight:600}
+.qchip-tec .tec-log-page .datetime-panel-heading>span{font-size:11px;color:var(--muted)}
+.qchip-tec .tec-log-page .calendar-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+.qchip-tec .tec-log-page .calendar-step{display:grid;place-items:center;width:32px;min-height:32px;padding:0;border-radius:8px}
+.qchip-tec .tec-log-page .calendar-step:hover{background:var(--green-soft)}
+.qchip-tec .tec-log-page .calendar-month{display:flex;align-items:center;justify-content:center;gap:5px}
+.qchip-tec .tec-log-page .calendar-month input{width:46px;min-height:30px;padding:4px 2px;text-align:center;font-size:14px;font-weight:600;border:0;background:transparent;border-radius:5px}
+.qchip-tec .tec-log-page .calendar-month select{width:66px;min-height:30px;padding:3px;border:0;background:transparent;font-size:14px;font-weight:600}
+.qchip-tec .tec-log-page .calendar-month>span{color:var(--muted);margin-right:6px}
+.qchip-tec .tec-log-page .calendar-week,.qchip-tec .tec-log-page .calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+.qchip-tec .tec-log-page .calendar-week{color:var(--muted);text-align:center;font-size:11px;margin-bottom:5px}
+.qchip-tec .tec-log-page .calendar-week span{padding-block:4px}
+.qchip-tec .tec-log-page .calendar-days button{height:32px;min-height:32px;padding:0;border-radius:8px;font-size:13px;font-variant-numeric:tabular-nums}
+.qchip-tec .tec-log-page .calendar-days button[data-current=false]{color:var(--muted)}
+.qchip-tec .tec-log-page .calendar-days button:hover{background:var(--green-soft)}
+.qchip-tec .tec-log-page .calendar-days button[aria-pressed=true]{background:var(--green);color:var(--surface);font-weight:600}
+.qchip-tec .tec-log-page .datetime-time{display:grid;grid-template-columns:1fr 8px 1fr 8px 1fr 54px;gap:5px;align-items:start;border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.qchip-tec .tec-log-page .time-wheel{min-width:0;text-align:center}
+.qchip-tec .tec-log-page .time-wheel-label{display:block;color:var(--muted);font-size:11px;margin-bottom:5px;line-height:18px}
+.qchip-tec .tec-log-page .time-wheel-body{position:relative;height:102px}
+.qchip-tec .tec-log-page .time-wheel-scroll{height:102px;padding-block:34px;overflow-y:auto;overscroll-behavior:contain;scroll-snap-type:y mandatory;scrollbar-width:none;touch-action:pan-y;mask-image:linear-gradient(transparent,#000 25%,#000 75%,transparent)}
+.qchip-tec .tec-log-page .time-wheel-scroll::-webkit-scrollbar{display:none}
+.qchip-tec .tec-log-page .time-wheel-option{height:34px;line-height:34px;scroll-snap-align:center;color:var(--muted);font-size:16px;font-variant-numeric:tabular-nums;cursor:pointer;user-select:none}
+.qchip-tec .tec-log-page .datetime-panel .time-wheel-input{position:absolute;left:0;top:34px;width:100%;height:34px;min-height:34px;padding:0;border:0;border-radius:7px;background:var(--green-soft);color:var(--green);text-align:center;font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.qchip-tec .tec-log-page .time-colon{padding-top:61px;text-align:center;font-size:17px;color:var(--muted)}
+.qchip-tec .tec-log-page .datetime-milliseconds{display:flex;flex-direction:column;align-items:center;gap:5px;margin-left:4px;color:var(--muted);font-size:11px;line-height:18px}
+.qchip-tec .tec-log-page .datetime-milliseconds input{width:48px;height:34px;min-height:34px;margin-top:34px;padding:0;border:1px solid var(--line);background:var(--surface);border-radius:7px;text-align:center;font-size:13px;font-variant-numeric:tabular-nums}
+.qchip-tec .tec-log-page .datetime-actions{display:flex;align-items:center;justify-content:flex-end;gap:9px;border-top:1px solid var(--line);padding-top:14px;margin-top:8px}
+.qchip-tec .tec-log-page .datetime-actions .button{min-height:36px;padding:8px 18px}
 .qchip-tec .tec-log-page .log-layout{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:20px;align-items:stretch}
 .qchip-tec .tec-log-page :is(.log-chart-panel,.log-table-panel){background:var(--surface);border:1px solid var(--line);border-radius:16px;min-width:0;padding:22px}
 .qchip-tec .tec-log-page .log-chart-panel{display:flex;flex-direction:column}
@@ -72,7 +112,6 @@
 .qchip-tec .tec-log-page .table-empty{text-align:center;height:240px;color:var(--muted);font-family:inherit}
 .qchip-tec .tec-log-page .pagination{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:14px;font-size:12px;color:var(--muted)}
 .qchip-tec .tec-log-page .pagination .button{padding:7px 11px;font-size:12px;min-height:34px}
-.qchip-tec .tec-log-page .log-footnote{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:16px 2px 0;line-height:1.8}
 .qchip-tec .tec-log-page .mono{font-family:"Consolas","Cascadia Mono",monospace;font-variant-numeric:tabular-nums}
 .qchip-tec .tec-log-page .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(min-width:1500px){.qchip-tec .tec-log-page .log-layout{grid-template-columns:minmax(0,1fr) 400px}.qchip-tec .tec-log-page .log-table-scroll{height:430px}}

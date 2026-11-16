@@ -20,6 +20,9 @@ def main():
     if len(sys.argv)>1 and sys.argv[1]=='--apply-update':
         from update_helper import main as update
         return update(sys.argv[2:])
+    if len(sys.argv)>1 and sys.argv[1]=='--import-legacy':
+        from portable_import import main as migrate
+        return migrate(sys.argv[2:])
     from desktop import main as desktop
     return desktop()
 

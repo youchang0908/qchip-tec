@@ -7,11 +7,14 @@ export class LocalTransport {
   setView(view, channel) { this.view = view; this.channel = channel; this.wake?.(); }
   get refreshHz() { return document.hidden ? 1 : 10; } // Cached UI reads only.
   async request(path, payload) {
+    const posting = payload !== undefined;
+    const headers = posting ? {'Content-Type': 'application/json'} : {};
+    if (this.token && path !== '/api/session') headers['X-Qchip-Token'] = this.token;
     const res = await fetch(this.base + path, {
       cache: 'no-store',
-      headers: payload ? {'Content-Type': 'application/json', 'X-Qchip-Token': this.token} : {},
-      method: payload ? 'POST' : 'GET',
-      body: payload ? JSON.stringify(payload) : undefined,
+      headers,
+      method: posting ? 'POST' : 'GET',
+      body: posting ? JSON.stringify(payload) : undefined,
       signal: AbortSignal.timeout(4500),
     });
     const data = await res.json();

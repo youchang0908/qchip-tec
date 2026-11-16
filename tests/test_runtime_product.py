@@ -9,6 +9,7 @@ import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from product_model import ProductModel
+from model_fixture import isolated_model
 from daily_log import read_header
 from test_local_log import mirrored_rows
 from test_product import wait_for
@@ -58,7 +59,7 @@ class RuntimeTests(unittest.TestCase):
 
     def test_valid_fake_control_and_read_only_boundary(self):
         for count in (1,4):
-            model=ProductModel(simulation=True,sim_channels=count)
+            model=isolated_model(self,simulation=True,sim_channels=count)
             worker=threading.Thread(target=model.run);worker.start()
             try:
                 model.set_connection(True);wait_for(lambda:model.connected)

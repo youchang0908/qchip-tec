@@ -6,6 +6,7 @@ import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from product_model import ProductModel
+from model_fixture import isolated_model
 from server import Rejected
 from device_name import validate_device_name, NEW_DEVICE_NAME, LEGACY_DEVICE_NAME
 from hardware_readonly.source import SourceCache
@@ -66,7 +67,7 @@ class DeviceNameTests(unittest.TestCase):
             model._disconnect()
 
     def make_wire(self,ack=True):
-        model=ProductModel(simulation=True,sim_channels=1)
+        model=isolated_model(self,simulation=True,sim_channels=1)
         class Source:
             authority_boot=model.controller.boot_id
             bound=0
@@ -122,7 +123,7 @@ class DeviceNameTests(unittest.TestCase):
         self.assertFalse(model.driver.fake.queries)
 
     def test_projection_name_is_top_level_not_device_identity(self):
-        model=ProductModel(simulation=True)
+        model=isolated_model(self,simulation=True)
         raw=json.loads(json.dumps(model.snapshot()));raw['simulation']=False
         cache=SourceCache();cache.accept(raw)
         self.assertEqual(cache.snapshot()['device_name'],NEW_DEVICE_NAME)

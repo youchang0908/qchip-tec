@@ -144,7 +144,7 @@ def run_window(args, service_factory, check_service):
 
         # Uses existing local HTTP APIs. No js_api or privileged browser bridge.
         # Browser profile/cache stays outside the user's cloud-synced project.
-        profile = Path(os.environ['LOCALAPPDATA']) / 'QchipTEC' / ('webview2-' + str(args.port))
+        profile = args.layout.base / ('webview2-' + str(args.port))
         webview.start(start_watch, gui='edgechromium', debug=False, private_mode=True,
             storage_path=str(profile),
             icon=str(ASSET_ROOT / 'packaging' / 'qchip.ico'))

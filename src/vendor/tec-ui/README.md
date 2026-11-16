@@ -1,4 +1,4 @@
-# Cloud Lab shared TEC UI 1.2.0
+# Cloud Lab shared TEC UI 1.4.3
 
 Canonical editable source: Mac website/packages/tec-ui. Windows consumes the exact verified release at remote_lab/vendor/tec-ui; vendor is immutable. React and lucide are peer dependencies resolved from the host, never bundled/copied node_modules.
 
@@ -46,3 +46,7 @@ For native token-protected GETs use exportCsv: the host fetches with its header 
 ## 1.4.1 · bounded cloud history
 
 `retentionHours={72}` adds the explicit last-72-hour preset and limits custom-range duration to72h. Omit the prop for the existing native7-day maximum. `refreshKey` triggers a new read for the same fixed range without resetting the selected metric/channel/page. Cross-day axes include dates. The host enforces retention and read permission; the component neither uploads logs nor controls sampling. Website history uses a real device-scoped cloud transport. Native1.4.0 remains compatible until the next verified package consumption.
+
+## 1.4.2 · date/time selection
+
+The custom log range now uses a calendar and centred hour/minute/second wheels with keyboard entry. The popover uses the browser top layer to escape scrolling host containers. Values remain UTC+8 wall time with millisecond precision and an exclusive end. Picker Cancel/light-dismiss discards its draft; picker Confirm changes the form draft only, and Apply remains the only query commit. Both explanatory bottom footnotes are removed. Host timestamps and product versions are unaffected. No transport or instrument changes.

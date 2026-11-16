@@ -179,13 +179,11 @@ def make_server(port=8765,sim=None,data_dir=None,device='arroyo',broker_profile=
         else:raise ValueError('Unknown device mode')
         # Private-mode WebView storage is ephemeral. Persist display only in a
         # dedicated local file, isolated from device settings and broker state.
-        ui_root = (root/'.runtime/UiPreferencesSimulation') if server.sim.simulation else (
-            Path(os.environ['LOCALAPPDATA'])/'QchipTEC/UiPreferences')
-        server.ui_preferences = UiPreferences(ui_root/'display.json')
+        from profile_paths import ui_preferences_path,broker_profile as profile_for
+        server.ui_preferences = UiPreferences(ui_preferences_path(root,server.sim.simulation))
         # Simulation credentials may NEVER replace the live broker credential.
         if broker_profile is None:
-            broker_profile=(root/'.runtime/HardwareControlSimulation') if server.sim.simulation else (
-                Path(os.environ['LOCALAPPDATA'])/'QchipTEC/HardwareControl')
+            broker_profile=profile_for(root,server.sim.simulation)
         directory=Path(broker_profile)/'private'
         directory.mkdir(parents=True,exist_ok=True)
         token_path=directory/'local_broker_token.txt'

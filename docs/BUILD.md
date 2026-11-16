@@ -9,10 +9,10 @@ npm ci
 .\.venv\Scripts\python.exe scripts/collect_notices.py node_modules
 .\.venv\Scripts\python.exe scripts/run_tests.py
 powershell -NoProfile -File tests/test_install.ps1
-.\.venv\Scripts\python.exe scripts/build_release.py --version 1.0.0 --tag v1.0.0 --output artifacts
+.\.venv\Scripts\python.exe scripts/build_release.py --version 1.0.1 --tag v1.0.1 --output artifacts
 ```
 
-`src/version.py` 是产品版本唯一来源；tag、参数和该值必须一致，否则构建失败。npm 的0.0.0仅标识前端构建工具配置，不是产品版本。公共 UI 固定1.4.1，构建会核验 `packaging/TEC_UI_PIN.json` 的完整文件哈希。
+`src/version.py` 是产品版本唯一来源；tag、参数和该值必须一致，否则构建失败。npm 的0.0.0仅标识前端构建工具配置，不是产品版本。公共 UI 固定1.4.3，构建会核验 `packaging/TEC_UI_PIN.json` 的完整文件哈希。构建命令只生成资产；GitHub 发布按 `RELEASING.md` 进行。
 
 构建会在全新工作目录编译 native 与桥接界面，再生成一个 `Qchip TEC.exe`，检查 native 和 `--broker` 角色的版本，并验证桥接未加载仪器模块。统一 EXE 的归档本身包含 native 模块，这是正常的；运行角色通过入口与导入 guard 隔离。
 

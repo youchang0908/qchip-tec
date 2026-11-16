@@ -24,14 +24,16 @@ def main():
     parser = argparse.ArgumentParser(description='Qchip TEC hardware read-only cloud mirror')
     parser.add_argument('action', choices=('version', 'check-local', 'run', 'recover', 'stop', 'exit'))
     parser.add_argument('--result-file',type=Path)
+    parser.add_argument('--data-dir',type=Path)
     args = parser.parse_args()
-    directory = Path(os.environ['LOCALAPPDATA']) / 'QchipTEC' / 'HardwareReadonly'
     if args.action == 'version':
         result=json.dumps({'version': VERSION, 'profile': PROFILE, 'device_access': False, 'test_mode': False,
                            'instrument_modules_loaded':any(n in sys.modules for n in ('pyvisa','serial','server','hardware_monitor','product_driver'))})
         if args.result_file:args.result_file.write_text(result,encoding='utf-8')
         else:print(result)
         return
+    from profile_paths import configure
+    directory=configure(args.data_dir).bridge
     directory.mkdir(parents=True, exist_ok=True)
     if args.action == 'exit':
         (directory / 'STOP_GATE_SERVICE').write_text('local gate service exit', encoding='utf-8')

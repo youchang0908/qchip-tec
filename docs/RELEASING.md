@@ -2,9 +2,11 @@
 
 本项目通过 GitHub Releases 发布 Windows 程序。
 
-## 首次0.x → 1.0.0
+## 旧版本与便携目录
 
-0.x没有更新按钮。用户正常退出旧 native 和旧桥接后，把完整1.0.0程序包解压到一个长期使用的可写目录，更新快捷方式，再打开 `Qchip TEC.exe`。保留原本机 profile、配对和日志目录；不迁移、合并、覆盖任何历史文件。原启动器的自选 data_dir 会被读取并沿用。新启动默认不连接 COM，由用户手动连接，TEC 输出状态不变。
+0.x没有更新按钮。正常退出旧 native 和桥接后，将完整程序包解压到长期使用的可写目录。1.0.1 新安装默认把本机配置、配对和历史放在安装目录的 `data`，CSV 放在 `log`；旧数据不自动搬迁。需要导入时按 `PORTABLE_IMPORT_1.0.1.md` 先检查、再确认复制，源文件保留，配对凭据不随通用导入复制。新启动默认不连接 COM，重启后手动连接，不重放仪器参数。
+
+旧版更新器传入当前电脑原有的显式 `--data-dir` 时，1.0.1 保留旧 native、桥接、历史和显示偏好的目录布局，不在旧目录内另建空的 native profile。兼容仅限本机原启动器选定目录或旧默认目录，并核对本机标记；不能用它接管另一台电脑的配对。这个例外不会让新安装自动遍历或导入旧目录。
 
 ## 以后发布
 
@@ -32,8 +34,8 @@
 
 ## 一行安装入口
 
-根目录 `install.ps1` 是首次安装脚本，随干净源码进入公开仓库 main 分支。README 同时保留两个入口：推荐短地址 `https://cloud.youchang.space/install.ps1` 和直接 GitHub 地址 `https://raw.githubusercontent.com/youchang0908/qchip-tec/main/install.ps1`。短地址只作固定重定向到后者，不另外托管脚本。两个入口都在正式发布后启用；当前未公开仓库、未发布或部署入口。不接收任意脚本 URL，不经过设备鉴权或遥测通道。
+根目录 `install.ps1` 是首次安装脚本，随源码进入公开仓库 main 分支。README 同时保留两个入口：推荐短地址 `https://cloud.youchang.space/install.ps1` 和直接 GitHub 地址 `https://raw.githubusercontent.com/youchang0908/qchip-tec/main/install.ps1`。短地址只作固定重定向到后者，不另外托管脚本。不接收任意脚本 URL，不经过设备鉴权或遥测通道。
 
-脚本读取同一仓库最新正式 Release，验证 update.json/ZIP/四个程序文件，在当前用户固定目录首次安装。已有目标目录不覆盖，应用内升级机制保持不变。系统驱动/WebView2 不由该脚本安装。
+脚本读取同一仓库最新正式 Release，验证 update.json/ZIP/四个程序文件，默认在当前 PowerShell 工作目录下新建 `Qchip-TEC`，可用 `-InstallDir` 指定完整安装目录。已有目标目录不覆盖，应用内升级机制保持不变。系统驱动/WebView2 不由该脚本安装。
 
-`tests/test_install.ps1` 只使用临时假目录、假下载与禁用启动，验证成功安装、下载哈希错误与已有目录保护。首次真实 GitHub 下载仍待公开发布阶段核验；不在实验室正式配置目录运行安装器。
+`tests/test_install.ps1` 只使用临时假目录、假下载与禁用启动，验证默认/自选目录、下载校验和已有目录保护。不在实验室正式配置目录运行首次安装器。

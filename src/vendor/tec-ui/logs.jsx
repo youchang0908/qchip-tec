@@ -5,6 +5,7 @@ import {ArrowDownToLine} from 'lucide-react';
 import {COLORS} from './components.jsx';
 import {CHANNELS,METRICS,TABLE_COLUMNS,makeRange,isoInput,axisClock,fmt,stamp,nearestPoint,tableCell} from './log_model.js';
 import {TableColumnPicker,useTableColumns} from './log_columns.jsx';
+import {DateTimeField} from './datetime.jsx';
 
 /** Read-only log display. The host owns authentication, storage, queries and export URLs. */
 export function LogSeriesChart({data,range,metric,loading,error}){
@@ -89,7 +90,7 @@ export function LogPage({transport,serverMs,channelIds=CHANNELS,storageSlot=null
       <label className="field-inline">显示时间<select aria-label="显示时间" value={preset} onChange={e=>changePreset(e.target.value)}><option value="2">最近 2 分钟</option><option value="10">最近 10 分钟</option><option value="60">最近 1 小时</option><option value="1440">最近 24 小时</option>{retentionHours===72&&<option value="4320">最近 72 小时</option>}<option value="custom">自定义起止</option></select></label>
       <span className="range-text mono">{stamp(range.start)} — {stamp(range.end)} <b>UTC+8</b></span>
     </div>
-    {preset==='custom'&&<form className="custom-range" onSubmit={apply}><label>开始 (UTC+8)<input aria-label="开始时间 UTC+8" type="text" className="mono" spellCheck="false" placeholder="2026-10-30T10:48:00.000" required value={start} onChange={e=>setStart(e.target.value)}/></label><label>结束 (UTC+8，不含)<input aria-label="结束时间 UTC+8" type="text" className="mono" spellCheck="false" placeholder="2026-10-30T10:49:00.000" required value={end} onChange={e=>setEnd(e.target.value)}/></label><button className="button primary" type="submit">应用时间范围</button><span className="section-note">格式 YYYY-MM-DDTHH:mm:ss.SSS · UTC+8</span></form>}
+    {preset==='custom'&&<form className="custom-range" onSubmit={apply}><DateTimeField label="开始时间" value={start} onChange={setStart}/><DateTimeField label="结束时间" value={end} onChange={setEnd}/><button className="button primary" type="submit">应用时间范围</button></form>}
     {formError&&<div className="error-banner" role="alert">{formError}</div>}
     {error&&<div className="error-banner" role="alert">读取日志失败：{error}。调整时间范围或刷新重试。</div>}
     <div className="log-layout">
@@ -112,7 +113,6 @@ export function LogPage({transport,serverMs,channelIds=CHANNELS,storageSlot=null
         <div className="pagination"><button className="button secondary" disabled={page===0||loading} onClick={()=>setPage(old=>old-1)}>上一页</button><span>{page+1} / {pages}</span><button className="button secondary" disabled={page+1>=pages||loading} onClick={()=>setPage(old=>old+1)}>下一页</button></div>
       </section>
     </div>
-    <div className="log-footnote"><span>固定回看 · 图与表共用上方时间范围 [开始, 结束)</span><span>仅图表抽稀；表格与 CSV 保留原始记录</span></div>
   </section>;
 }
 

@@ -75,7 +75,8 @@ class ProductModel(HardwareControlModel):
             from settings_transaction import recover,journal_paths
             import os
             recovery_root=local_log_root or (Path(recording_dir)/'.native_log' if simulation and recording_dir else default_root(settings_path,simulation))
-            ui_path=(Path(settings_path).parent/'UiPreferencesSimulation/display.json' if simulation else Path(os.environ['LOCALAPPDATA'])/'QchipTEC/UiPreferences/display.json')
+            from profile_paths import ui_preferences_path
+            ui_path=ui_preferences_path(Path(settings_path).parent.parent,simulation)
             recover(Path(settings_path).with_name('settings-transaction.json'),journal_paths(settings_path,recovery_root,ui_path))
         if simulation and driver is None:
             driver = FakeProductArroyo(sim_channels)
@@ -96,7 +97,7 @@ class ProductModel(HardwareControlModel):
         self.settings.setdefault('device_name', NEW_DEVICE_NAME)
         self.sampling = ProductSampling((), self.settings['update_interval_ms'], clock)
         log_root=local_log_root or (Path(recording_dir)/'.native_log' if simulation and recording_dir else default_root(settings_path,simulation))
-        self.daily_log = LocalLog(log_root,Path(self.settings['recording_dir'])/'structured_logs',
+        self.daily_log = LocalLog(log_root,Path(self.settings['recording_dir']),
                                   self.settings['filename_prefix']+'_raw_v1',self.source)
         self.daily_log.configure(self.settings['log_enabled'])
         self.round_robin = 0

@@ -187,7 +187,8 @@ class LocalGate:
             connected=enabled and running and self.allowed.is_set() and status.get('state')=='online' and time.time()-status.get('updated_at',0)<5
             connection_state=('blocked' if self.intent is None else 'disconnected' if not enabled else 'blocked' if self.error or self.blocked else
                               'online' if connected else 'reconnecting' if status.get('state')=='reconnecting' else 'connecting')
-            return {'available':True,'version':VERSION,'enabled':enabled,
+            from profile_paths import profile_id
+            return {'available':True,'version':VERSION,'enabled':enabled,'profile_id':profile_id(self.directory),
                     'process_id':os.getpid(),'parent_process_id':os.getppid(),
                     'connected':connected,'connection_state':connection_state,
                     'error':self.error,'history':status.get('history',{'state':'dormant','error':None}),

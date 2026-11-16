@@ -93,12 +93,13 @@ class LocalService:
             logging.info('Attached to existing %s service; its lifetime remains independent', self.args.device)
             return
         try:
-            model = ProductModel(recording_dir=self.args.data_dir/'TEC_data',
+            model = ProductModel(recording_dir=self.args.layout.csv,
                 settings_path=self.args.data_dir/'.runtime/settings.json',
-                simulation=self.args.device=='simulation',sim_channels=self.args.sim_channels)
+                simulation=self.args.device=='simulation',sim_channels=self.args.sim_channels,
+                local_log_root=self.args.layout.history)
             self.server = make_server(self.args.port, sim=model, data_dir=self.args.data_dir, device=self.args.device)
             from updates import Updates
-            cache=(self.args.data_dir/'.runtime/UpdatesSimulation' if self.args.device=='simulation' else Path(os.environ['LOCALAPPDATA'])/'QchipTEC-Updates')
+            cache=self.args.layout.updates
             self.server.updates=Updates(cache,install=self.install_update if getattr(sys,'frozen',False) and not self.args.headless else None)
         except OSError:
             for _ in range(20):
@@ -148,13 +149,13 @@ class LocalService:
             state=broker_probe(return_state=True)
             if state.get('version')!=VERSION or not state.get('process_id'):raise RuntimeError('桥接状态不匹配')
             pids.extend([state['process_id'],state['parent_process_id']])
-            broker_stop=Path(os.environ['LOCALAPPDATA'])/'QchipTEC/HardwareReadonly/STOP_GATE_SERVICE'
+            broker_stop=self.args.layout.bridge/'STOP_GATE_SERVICE'
         helper=folder/'Qchip TEC Updater.exe'
         if helper.exists():raise RuntimeError('更新 helper 已存在')
         shutil.copyfile(exe,helper)
         plan=dict(schema=1,target=str(exe.parent),staged=str(stage),manifest=ready['manifest'],
                   old_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),pids=pids,
-                  restart_args=['--device',self.args.device,'--port',str(self.args.port),'--data-dir',str(self.args.data_dir.resolve())])
+                  restart_args=['--device',self.args.device,'--port',str(self.args.port),'--data-dir',str(self.args.layout.base)])
         plan_path=folder/'plan.json'
         with plan_path.open('x',encoding='utf-8') as f:json.dump(plan,f)
         # Helper waits; it never kills or changes a running source. If shutdown
@@ -173,7 +174,7 @@ def run(args):
     if getattr(sys,'frozen',False) and args.device=='arroyo' and not args.headless:
         ensure_broker()
         from bridge_settings.supervisor import BrokerSupervisor
-        directory=Path(os.environ['LOCALAPPDATA'])/'QchipTEC/HardwareReadonly'
+        directory=args.layout.bridge
         supervisor=BrokerSupervisor(directory,lambda:ensure_broker(supervisor.stop),broker_probe)
         args._broker_supervisor=supervisor
         supervisor.start()
@@ -203,6 +204,9 @@ def broker_probe(return_state=False):
         state=json.load(response)
     if state.get('version')!=VERSION:
         raise RuntimeError('请先正常退出旧版云桥接，再启动新版。')
+    from profile_paths import current,profile_id
+    if current() and state.get('profile_id')!=profile_id(current().bridge):
+        raise RuntimeError('已有其他安装目录的桥接运行，请先正常退出它')
     return state if return_state else True
 
 
@@ -216,9 +220,12 @@ def ensure_broker(cancel=None):
     companion=Path(sys.executable).resolve()
     if not getattr(sys,'frozen',False):raise RuntimeError('源码模式请使用隔离的桥接入口')
     if cancel is not None and cancel.is_set():return False
-    stop_file=Path(os.environ['LOCALAPPDATA'])/'QchipTEC/HardwareReadonly/STOP_GATE_SERVICE'
+    from profile_paths import current
+    storage=current()
+    if storage is None:raise RuntimeError('桥接数据目录尚未明确指定')
+    stop_file=storage.bridge/'STOP_GATE_SERVICE'
     if cancel is not None and stop_file.exists():return False
-    child=subprocess.Popen([str(companion),'--broker','recover' if cancel is not None else 'run'],creationflags=subprocess.CREATE_NO_WINDOW,cwd=str(companion.parent))
+    child=subprocess.Popen([str(companion),'--broker','recover' if cancel is not None else 'run','--data-dir',str(storage.base)],creationflags=subprocess.CREATE_NO_WINDOW,cwd=str(companion.parent))
     for _ in range(30):
         if cancel is not None and cancel.is_set():return False
         if child.poll() is not None:raise RuntimeError('云桥接启动失败，请检查是否仍有旧版运行。')
@@ -243,9 +250,10 @@ def main():
             parser.error('Simulation requires an isolated data-dir and port28774..28779')
     else:
         if args.port!=8765:parser.error('Hardware source port must be8765')
-        from profile_paths import desktop_profile
-        args.data_dir=desktop_profile(args.data_dir)
     try:
+        from profile_paths import configure
+        args.layout=configure(args.data_dir)
+        args.data_dir=args.layout.native
         if not 1 <= args.port <= 65535:
             raise ValueError('端口应在 1–65535 之间')
         runtime = args.data_dir.resolve() / '.runtime'

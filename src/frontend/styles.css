@@ -115,6 +115,12 @@ body{background:#f3f1e9}
 .qchip-tec .settings-workspace .overclock-options{padding:16px 0 0;margin:0 0 28px}
 .qchip-tec .settings-inline-status{font-size:13px;color:var(--muted);margin-top:16px}
 .qchip-tec .settings-workspace .settings-footer{flex:none;margin-top:20px;padding-top:20px}
+.qchip-tec .update-confirm-dialog{box-sizing:border-box;width:min(420px,calc(100vw - 32px));padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--panel,#fbfaf5);color:var(--ink)}
+.qchip-tec .update-confirm-dialog::backdrop{background:rgba(31,54,44,.3)}
+.qchip-tec .update-confirm-dialog h3{display:flex;align-items:center;gap:10px;margin:0 0 20px;font-size:20px}
+.qchip-tec .update-confirm-dialog p{margin:0;line-height:1.8;overflow-wrap:anywhere}
+.qchip-tec .update-confirm-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:12px;margin-top:28px}
+.qchip-tec .update-confirm-actions .button{min-height:44px;min-width:76px}
 .qchip-tec .settings-categories button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 .qchip-tec .bridge-pairing{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
 .qchip-tec .settings-field .bridge-pairing input[type=password]{display:block;box-sizing:border-box;width:100%;margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:var(--radius-control);background:var(--paper);color:var(--ink);font:inherit}

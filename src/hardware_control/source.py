@@ -14,8 +14,8 @@ BASE='http://127.0.0.1:8765'
 class ControlClient:
     def __init__(self, base=BASE, token_path=None):
         self.base=base
-        self.token_path=Path(token_path) if token_path else (
-            Path(os.environ['LOCALAPPDATA'])/'QchipTEC/HardwareControl/private/local_broker_token.txt')
+        from profile_paths import native_broker_token
+        self.token_path=Path(token_path) if token_path else native_broker_token()
         self.opener=urllib.request.build_opener(urllib.request.ProxyHandler({}),NoRedirect())
 
     def call(self, action, body):

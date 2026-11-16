@@ -11,7 +11,7 @@ from settings_transaction import Transaction,recover
 class SettingsCommitTests(unittest.TestCase):
     def test_invalid_storage_never_saves_general_settings(self):
         with tempfile.TemporaryDirectory() as tmp:
-            r=Path(tmp);m=ProductModel(recording_dir=r/'log',settings_path=r/'.runtime/settings.json',simulation=True)
+            r=Path(tmp).resolve();m=ProductModel(recording_dir=r/'log',settings_path=r/'.runtime/settings.json',simulation=True)
             ui=UiPreferences(r/'.runtime/UiPreferencesSimulation/display.json')
             try:
                 initial=dict(m.settings); changed=dict(initial,display_seconds=155)
@@ -23,7 +23,7 @@ class SettingsCommitTests(unittest.TestCase):
 
     def test_global_save_commits_storage_and_other_preferences(self):
         with tempfile.TemporaryDirectory() as tmp:
-            r=Path(tmp);m=ProductModel(recording_dir=r/'log',settings_path=r/'.runtime/settings.json',simulation=True)
+            r=Path(tmp).resolve();m=ProductModel(recording_dir=r/'log',settings_path=r/'.runtime/settings.json',simulation=True)
             ui=UiPreferences(r/'.runtime/UiPreferencesSimulation/display.json')
             try:
                 storage=dict(directory=str(r/'saved'),prefix='test_log',expected_directory=str(m.daily_log.directory),expected_prefix=m.daily_log.prefix)
@@ -37,7 +37,7 @@ class SettingsCommitTests(unittest.TestCase):
 
     def test_two_file_failure_rolls_back_and_crash_journal_recovers(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root=Path(tmp);a=root/'settings.json';b=root/'csv_settings.json';j=root/'pending.json'
+            root=Path(tmp).resolve();a=root/'settings.json';b=root/'csv_settings.json';j=root/'pending.json'
             a.write_text('original-a');b.write_text('original-b')
             real=os.replace;failed=[False]
             def fail_once(src,dst):

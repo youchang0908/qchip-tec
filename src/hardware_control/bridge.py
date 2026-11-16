@@ -87,7 +87,8 @@ def send_name_event(wire, schedule, send):
 
 def load_config(directory):
     directory = Path(directory).resolve()
-    expected = (Path(os.environ['LOCALAPPDATA']) / 'QchipTEC' / 'HardwareReadonly').resolve()
+    from profile_paths import bridge_directory
+    expected = bridge_directory().resolve()
     if directory != expected:
         raise Rejected('private hardware profile required')
     config = json.loads((directory / 'cloud_config.json').read_text(encoding='utf-8'))
@@ -99,7 +100,8 @@ def load_config(directory):
             or not valid_device_id(config['device_id'])
             or config['bridge_url'] not in (BRIDGE_URL, bridge_url_for(config['device_id']))):
         raise Rejected('hardware identity required')
-    token_path = Path(config['token_file']).resolve()
+    token_path = Path(config['token_file'])
+    token_path = (token_path if token_path.is_absolute() else directory/token_path).resolve()
     if not permitted_token_path(directory, token_path):
         raise Rejected('private hardware token required')
     if type(config.get('quota_enforced',True)) is not bool:

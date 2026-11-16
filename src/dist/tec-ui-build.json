@@ -1,0 +1,114 @@
+{
+  "version": "1.0.0",
+  "package_version": "1.4.1",
+  "pin_sha256": "86510f8fe50c7154e440d029f9ad23dbbb9d01e4e944be3b0dcf6c1ad7239abe",
+  "vendor_files": [
+    {
+      "path": "README.md",
+      "bytes": 6389,
+      "sha256": "733086719623c8241c5740208bb65b17f7ebc93b2af08339cde04ff6a52b489f"
+    },
+    {
+      "path": "chartMotion.js",
+      "bytes": 2244,
+      "sha256": "35d6822cdfa7b9ce6e81e83c4789af1716f2bc921c83350104da79e551e6c021"
+    },
+    {
+      "path": "components.d.ts",
+      "bytes": 2588,
+      "sha256": "bce747f64a9491ed74759eec68b33ee126032ee405f314e216d6ad5d38fcba09"
+    },
+    {
+      "path": "components.jsx",
+      "bytes": 20232,
+      "sha256": "0bb885673c37077e8803c88488fa12c33abf19b4e6e9013d3f00c029a4f6d622"
+    },
+    {
+      "path": "display.d.ts",
+      "bytes": 1421,
+      "sha256": "ccd8c89e4d606fdc80b8ef3b2580ce6000303670f894c4bc9aa832575506d7ad"
+    },
+    {
+      "path": "index.js",
+      "bytes": 271,
+      "sha256": "c79f95bccc7d12f2af1e8ccbb78651dba8c4ddf1d3c48379758f98dc9569d1ab"
+    },
+    {
+      "path": "log.css",
+      "bytes": 11085,
+      "sha256": "2a5b98b0fb229328e81b1e4c5a8ae6f61d31abb9c66797d87fff39aad28fbfe6"
+    },
+    {
+      "path": "log_columns.jsx",
+      "bytes": 3005,
+      "sha256": "d730ad173387c375c3514cee6764cc305d278fc36f40a9fed306a27a8f8d0438"
+    },
+    {
+      "path": "log_model.js",
+      "bytes": 2842,
+      "sha256": "da4fd500c22328bc74e44f53a91cf6c84d28e27ebd883e6e3b353871c3628ac3"
+    },
+    {
+      "path": "logs.d.ts",
+      "bytes": 1574,
+      "sha256": "50bb8ac525e9087b7387e0a5f42c0ed7ca1b7e4d4d2322e26e51a84ccb85a9b1"
+    },
+    {
+      "path": "logs.jsx",
+      "bytes": 13441,
+      "sha256": "47489cb7ff77ddc531848a44f890384da19e3180ec097d14b4249ebe0a7ce94c"
+    },
+    {
+      "path": "measurements.js",
+      "bytes": 1946,
+      "sha256": "51875bda6db88fc85bab733e8aced07f75e91fb5e5dd2cf86ea15404a9217acc"
+    },
+    {
+      "path": "package.json",
+      "bytes": 376,
+      "sha256": "4f819772da4e671376df2e32db96efc2aeba48447c3d07bda3e5e378454b3eab"
+    },
+    {
+      "path": "preferences.d.ts",
+      "bytes": 126,
+      "sha256": "114ff537df81647ca045bc63ab2cc787005a79d4e0c57a0d6b6b6d1587d8ca69"
+    },
+    {
+      "path": "preferences.js",
+      "bytes": 830,
+      "sha256": "e4fd6b988afc8c1ef4eb52abbda6ccf4fb2e7aab9c560d0b74ac25a2bd0237d1"
+    },
+    {
+      "path": "sampling.js",
+      "bytes": 3284,
+      "sha256": "c7d7ab4f95a59d31eaf21306acbec7b3a5c550562f17679f1636920dabdcc2b3"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 39516,
+      "sha256": "6d0c1bb97defa677e604e840fb7a00066bc8697934fa171c61264496350f6f06"
+    },
+    {
+      "path": "MANIFEST.json",
+      "bytes": 2658,
+      "sha256": "6c6af9ccce5b6542adcc729c803d1626b88feb5f9ca3f1e2525eda2bb51fb025"
+    }
+  ],
+  "assets": [
+    {
+      "path": "index.html",
+      "bytes": 637,
+      "sha256": "480329d7f659ecb031e9f3d6822d77114b149bdb56474a81c252e89f2922ae7b"
+    },
+    {
+      "path": "app.js",
+      "bytes": 290493,
+      "sha256": "b44849adc97f0398e661e4f17a2e28a6a906df08db68232ca7b01cbebd4d59c7"
+    },
+    {
+      "path": "app.css",
+      "bytes": 60585,
+      "sha256": "92ec24339050217cc5d986973a49f0e8e7c34d9a6eef528fd1b87b276252c1d8"
+    }
+  ]
+}

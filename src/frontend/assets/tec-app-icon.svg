@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64" fill="none" role="img" aria-label="Qchip TEC">
+<g stroke="#34483f" stroke-linecap="round" stroke-linejoin="round">
+<rect x="6" y="5" width="52" height="54" rx="13" fill="#8fb5a4" stroke-width="3"/>
+<rect x="12" y="12" width="40" height="29" rx="9" fill="#f5e8c8" stroke-width="2.5"/>
+<ellipse cx="23" cy="24" rx="1.9" ry="2.7" fill="#34483f" stroke="none"/>
+<ellipse cx="41" cy="24" rx="1.9" ry="2.7" fill="#34483f" stroke="none"/>
+<path d="M27 32q5 6 10 0" stroke-width="2.6"/>
+<circle cx="18" cy="50" r="2.8" fill="#77aab0" stroke="none"/>
+<circle cx="28" cy="50" r="2.8" fill="#e99b7b" stroke="none"/>
+<circle cx="46" cy="50" r="4.2" fill="#e9c579" stroke-width="2"/>
+<path d="m46 50 1.5-2" stroke-width="1.8"/>
+</g></svg>

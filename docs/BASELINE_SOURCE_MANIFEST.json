@@ -1,0 +1,542 @@
+{
+  "baseline_product": "0.14.1",
+  "baseline_bridge": "0.9.1-typed",
+  "ui_pin": "1.4.1",
+  "files": [
+    {
+      "path": "src/arroyo_local.py",
+      "bytes": 5056,
+      "sha256": "d9994f126539bec71cc0af7a353514a1d553fa954ba1481920f846acf9d8729f"
+    },
+    {
+      "path": "src/arroyo_readonly.py",
+      "bytes": 6131,
+      "sha256": "d938256f13fab0feeb70a50ff066245381fa5ca07d5a7e33c7af375f96a8d928"
+    },
+    {
+      "path": "src/bridge_settings/__init__.py",
+      "bytes": 82,
+      "sha256": "5c628fa37ae6058f72533db77d0c91d4bc0df3dbcf086fc9f063f83591a9cfa3"
+    },
+    {
+      "path": "src/bridge_settings/device_identity.py",
+      "bytes": 867,
+      "sha256": "c7c2d9001b4cc5a9a171badae9434b5ea4e109b5fe3591eb3b3bf375cd1e8056"
+    },
+    {
+      "path": "src/bridge_settings/pairing.py",
+      "bytes": 8343,
+      "sha256": "3e28e216bfa3a68ccdd71deb09f18603dd806c6aaab486661e336224e308c4d9"
+    },
+    {
+      "path": "src/bridge_settings/redeem.py",
+      "bytes": 4271,
+      "sha256": "116a489700224480168f12761103276105e94dc04c7d0d161bb04bd7d25c4e52"
+    },
+    {
+      "path": "src/bridge_settings/supervisor.py",
+      "bytes": 2708,
+      "sha256": "21cc00ed4002e1be55290aabf3c6fd48bb328c4b044a5946e9ecfc28058908c4"
+    },
+    {
+      "path": "src/bridge_settings/test_gate_pairing.py",
+      "bytes": 2840,
+      "sha256": "63387f5a9e8c1cb8c6d78625f51114f5777b53ff75d2deea6537fb7ac8cab86a"
+    },
+    {
+      "path": "src/bridge_settings/test_network_recovery.py",
+      "bytes": 7886,
+      "sha256": "502f8dc030f5e758aa8352ee84cc7242181072fc34a575ac7c34c3b4ba559e32"
+    },
+    {
+      "path": "src/bridge_settings/test_pairing.py",
+      "bytes": 4898,
+      "sha256": "37bbf90e86b3e321ce9af9b490a8674f094332146206993b99249f896c4ac53a"
+    },
+    {
+      "path": "src/bridge_settings/test_reconnect.py",
+      "bytes": 4951,
+      "sha256": "f3a30259cbdae53dee89506c33372ce1825b03e8ccf63073dd245650bc5f0926"
+    },
+    {
+      "path": "src/bridge_settings/test_redeem.py",
+      "bytes": 2927,
+      "sha256": "b5edfdd79734e866e2cbd209e435cec9697c098f9b86298aee8860a9cba90ff1"
+    },
+    {
+      "path": "src/daily_log.py",
+      "bytes": 10771,
+      "sha256": "3db7843a6059fa2ea4d35e8b02cdacd68467f81bac2a5f06ee6688ec8c356363"
+    },
+    {
+      "path": "src/desktop.py",
+      "bytes": 10428,
+      "sha256": "6b351b11dce4c70bc1a6aeaf8e36243c65bb1c4953300fb1fd5015ea6c501e89"
+    },
+    {
+      "path": "src/desktop_window.py",
+      "bytes": 6834,
+      "sha256": "e09c9504ef5686640fe66655656781549e52596d75d27e1c9e4de64894a202c3"
+    },
+    {
+      "path": "src/device_discovery.py",
+      "bytes": 1788,
+      "sha256": "0a4df547dce093952d8708cb3369084e87c0ace4a2398ab783dcc55ea9ffdfee"
+    },
+    {
+      "path": "src/device_name.py",
+      "bytes": 666,
+      "sha256": "961e859eae10bf191d144c7f09d0c7ba8983276cada41f33c9092039f37492bd"
+    },
+    {
+      "path": "src/dist/app.css",
+      "bytes": 60585,
+      "sha256": "92ec24339050217cc5d986973a49f0e8e7c34d9a6eef528fd1b87b276252c1d8"
+    },
+    {
+      "path": "src/dist/app.js",
+      "bytes": 288244,
+      "sha256": "6b97128f3c934c75e521d3bfb2575f76a8972c8289712b9d00915cfe70401d75"
+    },
+    {
+      "path": "src/dist/index.html",
+      "bytes": 637,
+      "sha256": "480329d7f659ecb031e9f3d6822d77114b149bdb56474a81c252e89f2922ae7b"
+    },
+    {
+      "path": "src/dist/tec-ui-build.json",
+      "bytes": 3255,
+      "sha256": "4830f61be5259e3219b9e504a949599261a8b2a80132748267e76f82191d3e1f"
+    },
+    {
+      "path": "src/frontend/assets/tec-app-icon-16.svg",
+      "bytes": 776,
+      "sha256": "34a124034e080b4f0a092143b86f2f035c76f47f5f46f4764f39991a76426ee6"
+    },
+    {
+      "path": "src/frontend/assets/tec-app-icon.svg",
+      "bytes": 811,
+      "sha256": "a526fc4b87b2201627039a320ded88c30326c81de77d7d01beb806193b36ed06"
+    },
+    {
+      "path": "src/frontend/assets/tec-mascot-animated.svg",
+      "bytes": 4501,
+      "sha256": "6b29a1af899a1b4d89db6d785e3eb20dcdb6cf2e47e5537891001962e6e20698"
+    },
+    {
+      "path": "src/frontend/assets/tec-mascot.svg",
+      "bytes": 3333,
+      "sha256": "58df378864d9c4decefac701de66671c53e2046a76ad358222bc9b70578d4db6"
+    },
+    {
+      "path": "src/frontend/chartMotion.js",
+      "bytes": 126,
+      "sha256": "85a13d365667ed06cbe1e944eadc39d7312214d8686c001bc4fb24cbdf71a5e2"
+    },
+    {
+      "path": "src/frontend/CloudBridgeStatus.jsx",
+      "bytes": 2387,
+      "sha256": "dfaf9b1b923afea44ade9679d704bd4f0c86b1b37bb5f38fdec241e0b44e4aac"
+    },
+    {
+      "path": "src/frontend/CloudGateWindow.jsx",
+      "bytes": 319,
+      "sha256": "60f65abf15a24f5f610eb980fded6d19c7c098ff582d2eb4675ca2405166f509"
+    },
+    {
+      "path": "src/frontend/CloudLinkSetting.jsx",
+      "bytes": 6428,
+      "sha256": "b6071090350ea85dc0103e0d4cc209fcd73f330313200e090f5baf950cc41c4b"
+    },
+    {
+      "path": "src/frontend/gatePreview.jsx",
+      "bytes": 521,
+      "sha256": "61b324b1983e906cea0062009218775a55df55eb1a8dff04ba10437c6f0eef00"
+    },
+    {
+      "path": "src/frontend/index.html",
+      "bytes": 637,
+      "sha256": "480329d7f659ecb031e9f3d6822d77114b149bdb56474a81c252e89f2922ae7b"
+    },
+    {
+      "path": "src/frontend/local-log-transport.js",
+      "bytes": 1731,
+      "sha256": "6f37cdf97647f9513eaa1eaeb8456e925c5ec6dcbbded993f5f008d3cdab5f0f"
+    },
+    {
+      "path": "src/frontend/main.jsx",
+      "bytes": 288,
+      "sha256": "6eed8e413e259b6c2c92f0acf05f69e15fde825ba060b353db7bae0855fb9889"
+    },
+    {
+      "path": "src/frontend/measurements.js",
+      "bytes": 127,
+      "sha256": "8f98e7e278c756dc34e260a040e6414ef60d4051a8b17f0aeb742b6a42f83583"
+    },
+    {
+      "path": "src/frontend/measurements.test.js",
+      "bytes": 1701,
+      "sha256": "2d384c5b324b998814ce2dab969faeddb9171f59d4836ede66f3ab22e7c28c6e"
+    },
+    {
+      "path": "src/frontend/NativeLogPage.jsx",
+      "bytes": 988,
+      "sha256": "f58c2ab6f9f5caf0e669a01ca06657cc6861681fd3322fd9e93f75f81dd7129b"
+    },
+    {
+      "path": "src/frontend/NativeLogSettings.jsx",
+      "bytes": 4257,
+      "sha256": "4b19312b59315a3f3dc36a3f4bd39b725f51f4ef87a20710cffad97cfbc0b475"
+    },
+    {
+      "path": "src/frontend/NativeSharedCurve.jsx",
+      "bytes": 1370,
+      "sha256": "be1f551de2655cac18ae725bf33115af38633d01e2019e102447d50736c2ac5e"
+    },
+    {
+      "path": "src/frontend/protocol.d.ts",
+      "bytes": 3963,
+      "sha256": "33eb27a159bdbc23bbb5bea59447f2cc48a9ec8aca656d5f593836af8a7ec008"
+    },
+    {
+      "path": "src/frontend/RecordingBar.jsx",
+      "bytes": 2559,
+      "sha256": "ebc784cd4d3a6a1c4b790f8014899c4a7c1ee35e73f544e4684fc4f598383f67"
+    },
+    {
+      "path": "src/frontend/sampling.js",
+      "bytes": 1028,
+      "sha256": "93301c52b15ff7040d6c9783caf9522028b43cf99277217b8e1fd605a0515d9f"
+    },
+    {
+      "path": "src/frontend/SettingsDialog.jsx",
+      "bytes": 10452,
+      "sha256": "5096826a0f2426b2e1cc4499166deaf7853a266a30585db743fc30088f8d871b"
+    },
+    {
+      "path": "src/frontend/styles.css",
+      "bytes": 11239,
+      "sha256": "48f554069a8313e8bd1994057d7f997cae95c3fe67b0fe5fa79152918badf44e"
+    },
+    {
+      "path": "src/frontend/TecPanel.jsx",
+      "bytes": 12137,
+      "sha256": "e233d8d6e6cf8c2fd16f0f14dd1130aaba39cdff82afc448281947d7cd891cb2"
+    },
+    {
+      "path": "src/frontend/transport.js",
+      "bytes": 4201,
+      "sha256": "1ba326bdab535306560a55d0a274b7e52cd0dc3b91372c8413187e7b455f1706"
+    },
+    {
+      "path": "src/hardware_control/__init__.py",
+      "bytes": 241,
+      "sha256": "68fc469bd16bcd8649d574671834113c53fb16c85ec0371b613db4659f80e000"
+    },
+    {
+      "path": "src/hardware_control/authority.py",
+      "bytes": 6694,
+      "sha256": "461e741f17935643cb1284b679ed51686cacfcc2489e60fc908577a796cab5d3"
+    },
+    {
+      "path": "src/hardware_control/bridge.py",
+      "bytes": 24619,
+      "sha256": "e92580bdcde4e453d0606ab177d1317b44fe9a40fd3352675199397fd406609a"
+    },
+    {
+      "path": "src/hardware_control/controller.py",
+      "bytes": 21683,
+      "sha256": "d77aa3b612f7125c06663ef653ef5fdb57846a874afe2059957f2cf177f153de"
+    },
+    {
+      "path": "src/hardware_control/fake_device.py",
+      "bytes": 5304,
+      "sha256": "c1243428471b90e5068079994b25cf223b74054472929bc24ad81e5e79186b20"
+    },
+    {
+      "path": "src/hardware_control/gate.py",
+      "bytes": 16783,
+      "sha256": "bac62124d35902de0f16058d63aab4a9f8d0173a2f29b0afd2bc7e626c854662"
+    },
+    {
+      "path": "src/hardware_control/history_transport.py",
+      "bytes": 4392,
+      "sha256": "9fd86b895048e8268cfb59afc209dc47a67d3e96c3fe9b039f713ea79875e64b"
+    },
+    {
+      "path": "src/hardware_control/history_upload.py",
+      "bytes": 9828,
+      "sha256": "804e4e4349bef8e7e81152ab592e83c78c2167bddf41cf64d955f18ba35d24b8"
+    },
+    {
+      "path": "src/hardware_control/http.py",
+      "bytes": 9974,
+      "sha256": "f399f8db80aa8561516e4b43b25f03b65b98d21f333954b60e80f9c3cb8e288c"
+    },
+    {
+      "path": "src/hardware_control/model.py",
+      "bytes": 4477,
+      "sha256": "76af26d2692800e126ff3a89a79935a8b24419473b0169602ed9f912bcfc39c3"
+    },
+    {
+      "path": "src/hardware_control/recovery.py",
+      "bytes": 4484,
+      "sha256": "20ec9954c0487abfe1ebc8ec1541d7bef3905ac8c21cb63c57de9ea4d48d361b"
+    },
+    {
+      "path": "src/hardware_control/source.py",
+      "bytes": 3995,
+      "sha256": "0b5ccd1f670e953f44712182517bc6183c9b471d02223e22a383c0abfe44ffa8"
+    },
+    {
+      "path": "src/hardware_control/test_authority.py",
+      "bytes": 11892,
+      "sha256": "f5e885dc41ce44b166c21e7b85584e36bdd497d5e5e3d9f6f8441ec6bd86e6da"
+    },
+    {
+      "path": "src/hardware_control/test_bridge.py",
+      "bytes": 4455,
+      "sha256": "244dd4e370e31cd892a6beb8d1d79f70089277831c0187f8cd4c4885627a682b"
+    },
+    {
+      "path": "src/hardware_control/test_production.py",
+      "bytes": 5469,
+      "sha256": "7b8f87f9ad83a8c0d0fb1ecea244b954682d1aff9b34451a490cada1cd4d4a5a"
+    },
+    {
+      "path": "src/hardware_control/test_wire.py",
+      "bytes": 7114,
+      "sha256": "fd7f9470a6f35695b1e108c0eccf470733b41530a3f0cf4c5f424b4ec0ac5c98"
+    },
+    {
+      "path": "src/hardware_control/ui_preferences.py",
+      "bytes": 1395,
+      "sha256": "72054ddd126d8747f0045995c6be31e3fa2c785bb11fd26e1fe106b0663bfca9"
+    },
+    {
+      "path": "src/hardware_control/wire.py",
+      "bytes": 8239,
+      "sha256": "fe38f7d6088128fcdc189f3cce0168e706652fa82a3f692dc15588fcf220ebc1"
+    },
+    {
+      "path": "src/hardware_control_entry.py",
+      "bytes": 2754,
+      "sha256": "970e950ee16e924f481761896d2e5f29907942d1dbcf1b308be72aa26fa3e58e"
+    },
+    {
+      "path": "src/hardware_monitor.py",
+      "bytes": 10672,
+      "sha256": "e22b389a08fd7a622a811d4065a499e8e0dd06224c4bdde29a84a51b7325d212"
+    },
+    {
+      "path": "src/hardware_readonly/__init__.py",
+      "bytes": 195,
+      "sha256": "06432153451e1c25323ebb3e9edecbd1beee0cd16b7c417c191156c3a03fb398"
+    },
+    {
+      "path": "src/hardware_readonly/bridge.py",
+      "bytes": 13422,
+      "sha256": "2c281e892cd95639378c08eddae694631dae08ff932da366fdbbd9174b416398"
+    },
+    {
+      "path": "src/hardware_readonly/gate.py",
+      "bytes": 9203,
+      "sha256": "a5539edade837e093f7ab4252f706c32a4d95a3fece59bb0dc811f8a7f3873b2"
+    },
+    {
+      "path": "src/hardware_readonly/policy.py",
+      "bytes": 8383,
+      "sha256": "bdcdabe38e81b0fea85fbb2505c7d9baa3d9dfd9a2e48a8b3aa9877d0b8fd96c"
+    },
+    {
+      "path": "src/hardware_readonly/publication.py",
+      "bytes": 2861,
+      "sha256": "a56096e79c401a834a0f263a9f6db0b0af1fc836bd3c7129e308aa23d073031f"
+    },
+    {
+      "path": "src/hardware_readonly/source.py",
+      "bytes": 11341,
+      "sha256": "6c1fc63cebf99a9f9f278fb92546c10d063dc4979fb809be2fbf1bd3ad3c2410"
+    },
+    {
+      "path": "src/hardware_readonly/test_gate.py",
+      "bytes": 7445,
+      "sha256": "23e343f655f099f1d5f742424c7ba42215d5cf4aa6c1cf8d2e76b94adc404954"
+    },
+    {
+      "path": "src/hardware_readonly/test_idle60.py",
+      "bytes": 11287,
+      "sha256": "0a1398c008958d418ff1aa5da0c22ce92523e5159e24dbd22ee662574e031105"
+    },
+    {
+      "path": "src/hardware_readonly/test_readonly.py",
+      "bytes": 9566,
+      "sha256": "7f2abe4055fb2b315b081c5cd5811410fa58afe086826fc0d7cb7d48da0a116c"
+    },
+    {
+      "path": "src/hardware_readonly/wire.py",
+      "bytes": 7733,
+      "sha256": "8ce5f1cff71c157f0ea77387d95e2f8adb71081e0225d7114ebb2337398f0e2f"
+    },
+    {
+      "path": "src/local_log/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/local_log/csv_mirror.py",
+      "bytes": 9542,
+      "sha256": "63869e632470b7b374edeef2b1e6aa065f8a7e882ac1aaecb1d5f94b4fe4ba9a"
+    },
+    {
+      "path": "src/local_log/history_export.py",
+      "bytes": 2416,
+      "sha256": "765b84955aea1e35a040ab544e7266fa514c0695fcebdc24e46a2dcd90e9ffae"
+    },
+    {
+      "path": "src/local_log/history_index.py",
+      "bytes": 4047,
+      "sha256": "173ea9078a76f98c5f7b8ff322fd706a971b9e19f602b312f9b6964d16ed70f7"
+    },
+    {
+      "path": "src/local_log/host.py",
+      "bytes": 11139,
+      "sha256": "1ce0c0c229e0482858d7555014161a31c09addade69e438bfeb1619a86ec3f06"
+    },
+    {
+      "path": "src/local_log/http.py",
+      "bytes": 4623,
+      "sha256": "a11cb132aed841737aa5e12f09789a04d20ffffb21d01803faf3aeedd0ca7bb6"
+    },
+    {
+      "path": "src/local_log/log_interval.py",
+      "bytes": 2481,
+      "sha256": "fc4ce1a6a48ebaf39af970131a7cb38c069b40a3007a5f03b6ed9dfc40254ded"
+    },
+    {
+      "path": "src/local_log/log_store.py",
+      "bytes": 17099,
+      "sha256": "63e528c480d25e85b1cc09f92748739fd23915b1ee4dd082501073793e8d5377"
+    },
+    {
+      "path": "src/packaging/qchip.ico",
+      "bytes": 22372,
+      "sha256": "fae9b8388eda8316669af89e24aa46e267b851af03746c665b6822d06754f571"
+    },
+    {
+      "path": "src/product_driver.py",
+      "bytes": 5080,
+      "sha256": "46a0e7d1f2c1fd85fdede4338bac6ac9c94ddfa1602a7360c88666b442be77a0"
+    },
+    {
+      "path": "src/product_model.py",
+      "bytes": 20385,
+      "sha256": "346f79c658b92fad9a128c82b210cbec5cf3c5cc97bfedc4174430823614a566"
+    },
+    {
+      "path": "src/rate_guard.py",
+      "bytes": 2065,
+      "sha256": "4252a91a742fcffaa09afff74c2a556890f01f0df97a60dcc5661b3c519ba9cd"
+    },
+    {
+      "path": "src/sampling_policy.py",
+      "bytes": 4018,
+      "sha256": "c3d6b2f99cc728f1d2a1e38f2eb38918e234ae1e3e2a64c206435afdda33c0d1"
+    },
+    {
+      "path": "src/server.py",
+      "bytes": 32068,
+      "sha256": "a76d8d7c6c13b6c74a427682657f39c8a42251240997b766871d8fd6f51986cc"
+    },
+    {
+      "path": "src/vendor/tec-ui/chartMotion.js",
+      "bytes": 2244,
+      "sha256": "35d6822cdfa7b9ce6e81e83c4789af1716f2bc921c83350104da79e551e6c021"
+    },
+    {
+      "path": "src/vendor/tec-ui/components.d.ts",
+      "bytes": 2588,
+      "sha256": "bce747f64a9491ed74759eec68b33ee126032ee405f314e216d6ad5d38fcba09"
+    },
+    {
+      "path": "src/vendor/tec-ui/components.jsx",
+      "bytes": 20232,
+      "sha256": "0bb885673c37077e8803c88488fa12c33abf19b4e6e9013d3f00c029a4f6d622"
+    },
+    {
+      "path": "src/vendor/tec-ui/display.d.ts",
+      "bytes": 1421,
+      "sha256": "ccd8c89e4d606fdc80b8ef3b2580ce6000303670f894c4bc9aa832575506d7ad"
+    },
+    {
+      "path": "src/vendor/tec-ui/index.js",
+      "bytes": 271,
+      "sha256": "c79f95bccc7d12f2af1e8ccbb78651dba8c4ddf1d3c48379758f98dc9569d1ab"
+    },
+    {
+      "path": "src/vendor/tec-ui/log.css",
+      "bytes": 11085,
+      "sha256": "2a5b98b0fb229328e81b1e4c5a8ae6f61d31abb9c66797d87fff39aad28fbfe6"
+    },
+    {
+      "path": "src/vendor/tec-ui/log_columns.jsx",
+      "bytes": 3005,
+      "sha256": "d730ad173387c375c3514cee6764cc305d278fc36f40a9fed306a27a8f8d0438"
+    },
+    {
+      "path": "src/vendor/tec-ui/log_model.js",
+      "bytes": 2842,
+      "sha256": "da4fd500c22328bc74e44f53a91cf6c84d28e27ebd883e6e3b353871c3628ac3"
+    },
+    {
+      "path": "src/vendor/tec-ui/logs.d.ts",
+      "bytes": 1574,
+      "sha256": "50bb8ac525e9087b7387e0a5f42c0ed7ca1b7e4d4d2322e26e51a84ccb85a9b1"
+    },
+    {
+      "path": "src/vendor/tec-ui/logs.jsx",
+      "bytes": 13441,
+      "sha256": "47489cb7ff77ddc531848a44f890384da19e3180ec097d14b4249ebe0a7ce94c"
+    },
+    {
+      "path": "src/vendor/tec-ui/MANIFEST.json",
+      "bytes": 2658,
+      "sha256": "6c6af9ccce5b6542adcc729c803d1626b88feb5f9ca3f1e2525eda2bb51fb025"
+    },
+    {
+      "path": "src/vendor/tec-ui/measurements.js",
+      "bytes": 1946,
+      "sha256": "51875bda6db88fc85bab733e8aced07f75e91fb5e5dd2cf86ea15404a9217acc"
+    },
+    {
+      "path": "src/vendor/tec-ui/package.json",
+      "bytes": 376,
+      "sha256": "4f819772da4e671376df2e32db96efc2aeba48447c3d07bda3e5e378454b3eab"
+    },
+    {
+      "path": "src/vendor/tec-ui/preferences.d.ts",
+      "bytes": 126,
+      "sha256": "114ff537df81647ca045bc63ab2cc787005a79d4e0c57a0d6b6b6d1587d8ca69"
+    },
+    {
+      "path": "src/vendor/tec-ui/preferences.js",
+      "bytes": 830,
+      "sha256": "e4fd6b988afc8c1ef4eb52abbda6ccf4fb2e7aab9c560d0b74ac25a2bd0237d1"
+    },
+    {
+      "path": "src/vendor/tec-ui/README.md",
+      "bytes": 6389,
+      "sha256": "733086719623c8241c5740208bb65b17f7ebc93b2af08339cde04ff6a52b489f"
+    },
+    {
+      "path": "src/vendor/tec-ui/sampling.js",
+      "bytes": 3284,
+      "sha256": "c7d7ab4f95a59d31eaf21306acbec7b3a5c550562f17679f1636920dabdcc2b3"
+    },
+    {
+      "path": "src/vendor/tec-ui/styles.css",
+      "bytes": 39516,
+      "sha256": "6d0c1bb97defa677e604e840fb7a00066bc8697934fa171c61264496350f6f06"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+/* Shared log view only; native settings are host-owned. */
+.qchip-tec .tec-log-page select{font:inherit}
+.qchip-tec .tec-log-page select,.qchip-tec .tec-log-page .custom-range input{min-height:38px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);padding:7px 10px;max-width:100%}
+.qchip-tec .tec-log-page .range-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-bottom:20px}
+@media(max-width:760px){.qchip-tec .tec-log-page .log-table-panel th:first-child{width:auto}}
+.qchip-tec .tec-log-page .field-inline{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
+.qchip-tec .tec-log-page .range-text{font-size:12px;color:var(--muted);flex:1;min-width:220px;line-height:1.7}
+.qchip-tec .tec-log-page .range-text b{font-family:"Segoe UI",sans-serif;font-weight:600;margin-left:5px}
+.qchip-tec .tec-log-page .curve-channels input{width:16px;height:16px;margin:0}
+.qchip-tec .tec-log-page .custom-range{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px;margin:0 0 20px}
+.qchip-tec .tec-log-page .custom-range label{display:flex;flex-direction:column;gap:7px;font-size:13px}
+.qchip-tec .tec-log-page .custom-range input{width:250px;font-size:13px}
+.qchip-tec .tec-log-page .log-layout{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:20px;align-items:stretch}
+.qchip-tec .tec-log-page :is(.log-chart-panel,.log-table-panel){background:var(--surface);border:1px solid var(--line);border-radius:16px;min-width:0;padding:22px}
+.qchip-tec .tec-log-page .log-chart-panel{display:flex;flex-direction:column}
+.qchip-tec .tec-log-page .log-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;min-height:38px;margin-bottom:18px}
+.qchip-tec .tec-log-page .log-panel-heading h2{margin:0;font-size:16px;font-weight:600}
+.qchip-tec .tec-log-page .section-note{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.qchip-tec .tec-log-page .metric-switch{display:flex;border:1px solid var(--line);border-radius:8px;padding:3px;gap:3px}
+.qchip-tec .tec-log-page .metric-switch button{border:0;background:transparent;color:var(--muted);padding:7px 11px;border-radius:5px;font-size:13px;min-height:32px}
+.qchip-tec .tec-log-page .metric-switch button span{font-size:11px;margin-left:3px}
+.qchip-tec .tec-log-page .metric-switch button[aria-pressed=true]{background:var(--green-soft);color:var(--green);font-weight:600}
+.qchip-tec .tec-log-page .metric-switch button:hover{background:var(--surface-soft)}
+.qchip-tec .tec-log-page .curve-channels{display:flex;flex-wrap:wrap;align-items:center;gap:18px;border:0;padding:0;margin:0 0 14px;min-height:24px}
+.qchip-tec .tec-log-page .curve-channels legend{float:left;font-size:12px;color:var(--muted);margin-right:16px;line-height:24px}
+.qchip-tec .tec-log-page .curve-channels label{display:inline-flex;align-items:center;gap:6px;font-size:13px;cursor:pointer}
+.qchip-tec .tec-log-page .curve-channels i{width:16px;height:3px;background:var(--channel-color);border-radius:2px}
+.qchip-tec .tec-log-page .history-plot{position:relative;display:flex;flex-direction:column;justify-content:center;flex:1;min-width:0;min-height:350px}
+.qchip-tec .tec-log-page .history-plot svg{width:100%;height:auto;min-height:300px;overflow:visible;touch-action:pan-y}
+.qchip-tec .tec-log-page .history-plot svg text{fill:var(--muted);font:12px "Consolas",monospace}
+.qchip-tec .tec-log-page .history-plot svg .axis-unit{font:12px "Segoe UI",sans-serif;fill:var(--ink)}
+.qchip-tec .tec-log-page .grid-line{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}
+.qchip-tec .tec-log-page .history-line{fill:none;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.qchip-tec .tec-log-page .hover-line{stroke:var(--muted);stroke-dasharray:3 5;stroke-width:1}
+.qchip-tec .tec-log-page .plot-caption{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--muted);min-height:24px;margin-top:6px}
+.qchip-tec .tec-log-page .plot-empty{position:absolute;inset:40% 20px auto;text-align:center;color:var(--muted);font-size:14px;background:var(--surface);padding:16px}
+.qchip-tec .tec-log-page .log-table-panel{display:flex;flex-direction:column;padding:22px 18px 18px}
+.qchip-tec .tec-log-page .log-table-panel .log-panel-heading{padding:0 3px;margin-bottom:16px}
+.qchip-tec .tec-log-page .table-channel select{font-size:13px;min-width:82px}
+.qchip-tec .tec-log-page .table-meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:12px;margin-bottom:12px;padding-inline:3px}
+.qchip-tec .tec-log-page .table-meta>span{align-self:center;white-space:nowrap}
+.qchip-tec .tec-log-page .table-actions{display:flex;align-items:center;gap:9px}
+.qchip-tec .tec-log-page .column-picker{position:relative;flex:none}
+.qchip-tec .tec-log-page .column-picker-button{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--green);padding:0}
+.qchip-tec .tec-log-page .column-picker-button:hover,.qchip-tec .tec-log-page .column-picker-button[aria-expanded=true]{background:var(--green-soft)}
+.qchip-tec .tec-log-page .column-picker-panel{position:absolute;right:0;top:calc(100% + 8px);z-index:10;width:248px;max-width:calc(100vw - 64px);padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-size:13px}
+.qchip-tec .tec-log-page .column-picker-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.qchip-tec .tec-log-page .column-picker-title strong{font-size:14px;font-weight:600}
+.qchip-tec .tec-log-page .column-picker-title button{display:flex;align-items:center;justify-content:center;min-width:28px;min-height:28px;border:0;background:transparent;color:var(--muted);border-radius:6px;padding:4px}
+.qchip-tec .tec-log-page .column-picker-title button:hover{background:var(--paper)}
+.qchip-tec .tec-log-page .column-fixed{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;padding:6px 0 12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.qchip-tec .tec-log-page .column-fixed span{font-size:11px}
+.qchip-tec .tec-log-page .column-picker-panel label{display:flex;align-items:center;gap:9px;min-height:36px;padding-block:5px;cursor:pointer}
+.qchip-tec .tec-log-page .column-picker-panel input{width:16px;height:16px;margin:0}
+.qchip-tec .tec-log-page .column-picker-panel label span{flex:1}
+.qchip-tec .tec-log-page .column-picker-panel small{color:var(--muted);font-size:12px}
+.qchip-tec .tec-log-page .column-picker-panel p{font-size:11px;color:var(--muted);line-height:1.6;margin:8px 0 0}
+.qchip-tec .tec-log-page .export-link{display:inline-flex;gap:5px;align-items:center;color:var(--green);text-decoration:none;text-underline-offset:3px}
+.qchip-tec .tec-log-page .export-link:hover{text-decoration:underline}
+.qchip-tec .tec-log-page .log-table-scroll{height:380px;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent;border-block:1px solid var(--line)}
+.qchip-tec .tec-log-page .log-table-scroll::-webkit-scrollbar{width:6px;height:6px}
+.qchip-tec .tec-log-page .log-table-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+.qchip-tec .tec-log-page table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px;font-variant-numeric:tabular-nums}
+.qchip-tec .tec-log-page th{position:sticky;top:0;z-index:1;background:var(--surface-soft);color:var(--ink);text-align:right;font-weight:600;padding:11px 6px;white-space:nowrap}
+.qchip-tec .tec-log-page th span{font-size:10px;font-weight:400;color:var(--muted)}
+.qchip-tec .tec-log-page th:first-child{text-align:left}
+.qchip-tec .tec-log-page td{text-align:right;padding:9px 6px;border-bottom:1px solid var(--line);font-family:"Consolas","Cascadia Mono",monospace;vertical-align:middle}
+.qchip-tec .tec-log-page td:first-child{text-align:left;white-space:nowrap}
+.qchip-tec .tec-log-page tr:hover td{background:var(--paper)}
+.qchip-tec .tec-log-page .row-date{display:block;color:var(--muted);font-size:10px;line-height:1.5}
+.qchip-tec .tec-log-page .quality-label{display:block;font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:var(--brown);font-size:11px;margin-top:3px}
+.qchip-tec .tec-log-page .table-empty{text-align:center;height:240px;color:var(--muted);font-family:inherit}
+.qchip-tec .tec-log-page .pagination{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:14px;font-size:12px;color:var(--muted)}
+.qchip-tec .tec-log-page .pagination .button{padding:7px 11px;font-size:12px;min-height:34px}
+.qchip-tec .tec-log-page .log-footnote{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:16px 2px 0;line-height:1.8}
+.qchip-tec .tec-log-page .mono{font-family:"Consolas","Cascadia Mono",monospace;font-variant-numeric:tabular-nums}
+.qchip-tec .tec-log-page .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(min-width:1500px){.qchip-tec .tec-log-page .log-layout{grid-template-columns:minmax(0,1fr) 400px}.qchip-tec .tec-log-page .log-table-scroll{height:430px}}
+@media(max-width:1100px){.qchip-tec .tec-log-page .log-layout{grid-template-columns:minmax(0,1fr) 330px;gap:14px}.qchip-tec .tec-log-page .log-chart-panel{padding:18px 14px}.qchip-tec .tec-log-page .curve-channels{gap:10px}.qchip-tec .tec-log-page .history-plot svg{min-height:290px}.qchip-tec .tec-log-page .range-text{order:3;flex-basis:100%}.qchip-tec .tec-log-page .range-toolbar{column-gap:16px}}
+@media(max-width:760px){.qchip-tec .tec-log-page .log-layout{grid-template-columns:minmax(0,1fr)}.qchip-tec .tec-log-page .history-plot{min-height:280px}.qchip-tec .tec-log-page .log-table-scroll{height:360px}.qchip-tec .tec-log-page .log-table-panel th:first-child{width:42%}.qchip-tec .tec-log-page .history-plot svg{min-height:250px}.qchip-tec .tec-log-page .plot-caption{font-size:11px}}
+@media(max-width:480px){.qchip-tec .tec-log-page .curve-channels{gap:12px}.qchip-tec .tec-log-page .curve-channels legend{width:100%;margin-bottom:8px}.qchip-tec .tec-log-page .custom-range label,.qchip-tec .tec-log-page .custom-range input{width:100%}.qchip-tec .tec-log-page .range-text{font-size:11px}.qchip-tec .tec-log-page .range-toolbar{gap:10px 16px}.qchip-tec .tec-log-page .log-chart-panel{padding:18px 12px}.qchip-tec .tec-log-page .metric-switch button{padding:7px 9px}}
+
+.qchip-tec .tec-log-page{min-width:0}
+.qchip-tec .tec-log-page .table-meta{flex-wrap:wrap}
+.qchip-tec .tec-log-page :is(select,input,button,a){min-height:36px}
+@media(max-width:760px){.qchip-tec .tec-log-page :is(select,input,button,a){min-height:44px}.qchip-tec .tec-log-page .column-picker-button{min-width:44px}}
+
+.qchip-tec .tec-log-page button.export-link{border:0;background:transparent;padding:0;cursor:pointer;font:inherit}

@@ -1,0 +1,401 @@
+[
+  {
+    "name": "altgraph",
+    "version": "0.17.5",
+    "license": "MIT",
+    "source": [
+      "Documentation, https://altgraph.readthedocs.io/en/latest/",
+      "Issue tracker, https://github.com/ronaldoussoren/altgraph/issues",
+      "Repository, https://github.com/ronaldoussoren/altgraph"
+    ],
+    "license_files": [
+      "altgraph-0.17.5.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "bottle",
+    "version": "0.13.4",
+    "license": "MIT",
+    "source": [
+      "Source, https://github.com/bottlepy/bottle"
+    ],
+    "license_files": [
+      "bottle-0.13.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "cffi",
+    "version": "2.0.0",
+    "license": "MIT",
+    "source": [
+      "Documentation, https://cffi.readthedocs.io/",
+      "Changelog, https://cffi.readthedocs.io/en/latest/whatsnew.html",
+      "Downloads, https://github.com/python-cffi/cffi/releases",
+      "Contact, https://groups.google.com/forum/#!forum/python-cffi",
+      "Source Code, https://github.com/python-cffi/cffi",
+      "Issue Tracker, https://github.com/python-cffi/cffi/issues"
+    ],
+    "license_files": [
+      "cffi-2.0.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "clr_loader",
+    "version": "0.2.10",
+    "license": "MIT",
+    "source": [
+      "Sources, https://github.com/pythonnet/clr-loader",
+      "Documentation, https://pythonnet.github.io/clr-loader/"
+    ],
+    "license_files": [
+      "supplements/clr-loader-0.2.10-LICENSE.txt"
+    ]
+  },
+  {
+    "name": "cryptography",
+    "version": "44.0.3",
+    "license": "Apache-2.0 OR BSD-3-Clause",
+    "source": [
+      "homepage, https://github.com/pyca/cryptography",
+      "documentation, https://cryptography.io/",
+      "source, https://github.com/pyca/cryptography/",
+      "issues, https://github.com/pyca/cryptography/issues",
+      "changelog, https://cryptography.io/en/latest/changelog/"
+    ],
+    "license_files": [
+      "cryptography-44.0.3.dist-info/licenses/LICENSE",
+      "cryptography-44.0.3.dist-info/licenses/LICENSE.APACHE",
+      "cryptography-44.0.3.dist-info/licenses/LICENSE.BSD"
+    ]
+  },
+  {
+    "name": "importlib_metadata",
+    "version": "8.7.1",
+    "license": "Apache-2.0",
+    "source": [
+      "Source, https://github.com/python/importlib_metadata"
+    ],
+    "license_files": [
+      "importlib_metadata-8.7.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "source": [
+      "Documentation, https://packaging.pypa.io/",
+      "Source, https://github.com/pypa/packaging"
+    ],
+    "license_files": [
+      "packaging-26.3.dist-info/licenses/LICENSE",
+      "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "packaging-26.3.dist-info/licenses/LICENSE.BSD"
+    ]
+  },
+  {
+    "name": "pefile",
+    "version": "2023.2.7",
+    "license": "MIT",
+    "source": [
+      "https://github.com/erocarrera/pefile"
+    ],
+    "license_files": [
+      "pefile-2023.2.7.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "pillow",
+    "version": "11.3.0",
+    "license": "MIT-CMU",
+    "source": [
+      "Changelog, https://github.com/python-pillow/Pillow/releases",
+      "Documentation, https://pillow.readthedocs.io",
+      "Funding, https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pypi-pillow&utm_medium=pypi",
+      "Homepage, https://python-pillow.github.io",
+      "Mastodon, https://fosstodon.org/@pillow",
+      "Release notes, https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+      "Source, https://github.com/python-pillow/Pillow"
+    ],
+    "license_files": [
+      "pillow-11.3.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "proxy-tools",
+    "version": "0.1.0",
+    "license": "BSD (source/upstream; package metadata reports MIT)",
+    "source": [
+      "http://github.com/jtushman/proxy_tools"
+    ],
+    "license_files": [
+      "supplements/proxy-tools-0.1.0-LICENSE.txt"
+    ],
+    "license_conflict": "Preserve upstream BSD text and code copyright; see supplements/PROVENANCE.json."
+  },
+  {
+    "name": "pycparser",
+    "version": "2.23",
+    "license": "BSD-3-Clause",
+    "source": [
+      "https://github.com/eliben/pycparser"
+    ],
+    "license_files": [
+      "pycparser-2.23.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "pyinstaller",
+    "version": "6.16.0",
+    "license": "GPLv2-or-later with a special exception which allows to use PyInstaller to build and distribute non-free programs (including commercial ones)",
+    "source": [
+      "Homepage, https://pyinstaller.org",
+      "Documentation, https://pyinstaller.org",
+      "Source Code, https://github.com/pyinstaller/pyinstaller",
+      "Release Notes, https://pyinstaller.org/en/stable/CHANGES.html"
+    ],
+    "license_files": [
+      "pyinstaller-6.16.0.dist-info/licenses/COPYING.txt"
+    ]
+  },
+  {
+    "name": "pyinstaller-hooks-contrib",
+    "version": "2026.9",
+    "license": "See included license text",
+    "source": [
+      "https://github.com/pyinstaller/pyinstaller-hooks-contrib"
+    ],
+    "license_files": [
+      "pyinstaller_hooks_contrib-2026.9.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pyserial",
+    "version": "3.5",
+    "license": "BSD",
+    "source": [
+      "https://github.com/pyserial/pyserial"
+    ],
+    "license_files": [
+      "supplements/pyserial-3.5-LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pystray",
+    "version": "0.19.5",
+    "license": "LGPLv3",
+    "source": [
+      "https://github.com/moses-palmer/pystray"
+    ],
+    "license_files": [
+      "pystray-0.19.5.dist-info/COPYING",
+      "pystray-0.19.5.dist-info/COPYING.LGPL"
+    ]
+  },
+  {
+    "name": "pythonnet",
+    "version": "3.0.5",
+    "license": "MIT",
+    "source": [
+      "Homepage, https://pythonnet.github.io/",
+      "Sources, https://github.com/pythonnet/pythonnet"
+    ],
+    "license_files": [
+      "supplements/pythonnet-3.0.5-LICENSE.txt"
+    ]
+  },
+  {
+    "name": "PyVISA",
+    "version": "1.14.1",
+    "license": "See included license text",
+    "source": [
+      "homepage, https://github.com/pyvisa/pyvisa",
+      "documentation, https://pyvisa.readthedocs.io/en/latest/",
+      "repository, https://github.com/pyvisa/pyvisa",
+      "changelog, https://github.com/pyvisa/pyvisa/blob/main/CHANGES"
+    ],
+    "license_files": [
+      "PyVISA-1.14.1.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "PyVISA-py",
+    "version": "0.7.2",
+    "license": "See included license text",
+    "source": [
+      "homepage, https://github.com/pyvisa/pyvisa-py",
+      "documentation, https://pyvisa-py.readthedocs.io/en/latest/",
+      "repository, https://github.com/pyvisa/pyvisa-py",
+      "changelog, https://github.com/pyvisa/pyvisa-py/blob/main/CHANGES"
+    ],
+    "license_files": [
+      "PyVISA_py-0.7.2.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "pywebview",
+    "version": "6.1",
+    "license": "See included license text",
+    "source": [
+      "Homepage, https://pywebview.flowrl.com/",
+      "Repository, https://github.com/r0x0r/pywebview"
+    ],
+    "license_files": [
+      "pywebview-6.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pywin32-ctypes",
+    "version": "0.2.3",
+    "license": "BSD-3-Clause",
+    "source": [
+      "https://github.com/enthought/pywin32-ctypes"
+    ],
+    "license_files": [
+      "pywin32_ctypes-0.2.3.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "six",
+    "version": "1.17.0",
+    "license": "MIT",
+    "source": [
+      "https://github.com/benjaminp/six"
+    ],
+    "license_files": [
+      "six-1.17.0.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license": "PSF-2.0",
+    "source": [
+      "Bug Tracker, https://github.com/python/typing_extensions/issues",
+      "Changes, https://github.com/python/typing_extensions/blob/main/CHANGELOG.md",
+      "Documentation, https://typing-extensions.readthedocs.io/",
+      "Home, https://github.com/python/typing_extensions",
+      "Q & A, https://github.com/python/typing/discussions",
+      "Repository, https://github.com/python/typing_extensions"
+    ],
+    "license_files": [
+      "typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "websocket-client",
+    "version": "1.8.0",
+    "license": "Apache-2.0",
+    "source": [
+      "Documentation, https://websocket-client.readthedocs.io/",
+      "Source, https://github.com/websocket-client/websocket-client/"
+    ],
+    "license_files": [
+      "websocket_client-1.8.0.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "zipp",
+    "version": "3.23.1",
+    "license": "MIT",
+    "source": [
+      "Source, https://github.com/jaraco/zipp"
+    ],
+    "license_files": [
+      "zipp-3.23.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "react",
+    "version": "19.2.0",
+    "license": "MIT",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/facebook/react.git",
+      "directory": "packages/react"
+    },
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "react-dom",
+    "version": "19.2.0",
+    "license": "MIT",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/facebook/react.git",
+      "directory": "packages/react-dom"
+    },
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "scheduler",
+    "version": "0.27.0",
+    "license": "MIT",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/facebook/react.git",
+      "directory": "packages/scheduler"
+    },
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "lucide-react",
+    "version": "0.468.0",
+    "license": "ISC",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/lucide-icons/lucide.git",
+      "directory": "packages/lucide-react"
+    },
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "name": "esbuild",
+    "version": "0.25.12",
+    "license": "MIT",
+    "source": {
+      "type": "git",
+      "url": "git+https://github.com/evanw/esbuild.git"
+    },
+    "license_files": [
+      "LICENSE.md"
+    ]
+  },
+  {
+    "name": "@esbuild/win32-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "source": {
+      "type": "git",
+      "url": "git+https://github.com/evanw/esbuild.git"
+    },
+    "license_files": []
+  },
+  {
+    "name": "Microsoft.Web.WebView2 SDK",
+    "version": "1.0.2957.106",
+    "license": "Microsoft BSD terms; see LICENSE and NOTICE",
+    "source": "https://api.nuget.org/v3-flatcontainer/microsoft.web.webview2/1.0.2957.106/microsoft.web.webview2.1.0.2957.106.nupkg",
+    "license_files": [
+      "supplements/Microsoft.WebView2-1.0.2957.106-LICENSE.txt",
+      "supplements/Microsoft.WebView2-1.0.2957.106-NOTICE.txt"
+    ]
+  },
+  {
+    "name": "CPython",
+    "version": "3.9.13",
+    "license": "PSF/Python license and included notices",
+    "source": "https://www.python.org/",
+    "license_files": [
+      "LICENSES.txt"
+    ]
+  }
+]

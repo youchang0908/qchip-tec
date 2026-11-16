@@ -1,0 +1,3 @@
+# Qchip TEC development
+
+Independent clean candidate. Native/packaging single writer is Lab; Mac owns publisher/repository and final GO. Never open real COM, change real instrument parameters or outputs, replace running native/broker, restart alert sidecars, or copy private profiles/credentials/history. Use isolated simulation profiles and ports28774..28779. Keep protocol identifiers and public UI1.4.1 pin stable. One PRODUCT_VERSION source. Only allowlisted program files may be updated; data/settings/logs/pairing/history are excluded. No publishing/installing without Mac GO. No Goal unless user explicitly asks.

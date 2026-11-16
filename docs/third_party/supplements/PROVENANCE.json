@@ -1,0 +1,53 @@
+[
+  {
+    "file": "clr-loader-0.2.10-LICENSE.txt",
+    "sha256": "b00f9a4b112b44f91276ad8388ed470ad36668ff80f56f15e1e6981c85e6d23d",
+    "source": {
+      "name": "clr-loader",
+      "version": "0.2.10",
+      "url": "https://files.pythonhosted.org/packages/18/24/c12faf3f61614b3131b5c98d3bf0d376b49c7feaa73edca559aeb2aee080/clr_loader-0.2.10.tar.gz",
+      "sha256": "81f114afbc5005bafc5efe5af1341d400e22137e275b042a8979f3feb9fc9446"
+    },
+    "member": "clr_loader-0.2.10/LICENSE"
+  },
+  {
+    "file": "pyserial-3.5-LICENSE.txt",
+    "sha256": "f91cb9813de6a5b142b8f7f2dede630b5134160aedaeaf55f4d6a7e2593ca3f3",
+    "source": {
+      "name": "pyserial",
+      "version": "3.5",
+      "url": "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz",
+      "sha256": "3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb"
+    },
+    "member": "pyserial-3.5/LICENSE.txt"
+  },
+  {
+    "file": "pythonnet-3.0.5-LICENSE.txt",
+    "sha256": "e1dc3a6ff017a6800dc27a7220500f512b95fbcd996d38ebbbff85c693245369",
+    "source": {
+      "name": "pythonnet",
+      "version": "3.0.5",
+      "url": "https://files.pythonhosted.org/packages/9a/d6/1afd75edd932306ae9bd2c2d961d603dc2b52fcec51b04afea464f1f6646/pythonnet-3.0.5.tar.gz",
+      "sha256": "48e43ca463941b3608b32b4e236db92d8d40db4c58a75ace902985f76dac21cf"
+    },
+    "member": "pythonnet-3.0.5/LICENSE"
+  },
+  {
+    "file": "proxy-tools-0.1.0-LICENSE.txt",
+    "sha256": "a428fb8a2e762af3eb0a6edbbb88e9b42ccfee80fd9b423958bcacf9b9abbfe4",
+    "source": "https://github.com/jtushman/proxy_tools/blob/ccd35a569b95bec271a59890780c7821756c548a/LICENSE.txt",
+    "upstream_git_blob": "078411c7399fbc0454f36cbe8c8cdbaaba7ebc95",
+    "note": "Published0.1.0 sdist has no license file; code header explicitly says BSD with Armin Ronacher and Jonathan Tushman copyrights. setup.py says MIT. Preserve upstream BSD text and report metadata discrepancy, do not relabel this dependency as our MIT source."
+  },
+  {
+    "package": "Microsoft.Web.WebView2",
+    "version": "1.0.2957.106",
+    "source": "https://api.nuget.org/v3-flatcontainer/microsoft.web.webview2/1.0.2957.106/microsoft.web.webview2.1.0.2957.106.nupkg",
+    "package_sha256": "4c35a54835b63954159eac1d5b7a60ae617a41dbb5b73bfdb11c4870a891080a",
+    "extracted_files": [
+      "LICENSE.txt",
+      "NOTICE.txt"
+    ],
+    "note": "Exact SDK version reported by Lab from shipped Core and WinForms DLL metadata. SDK files only; WebView2 Runtime is not bundled. Official package downloaded for license extraction only, no installation or code execution."
+  }
+]

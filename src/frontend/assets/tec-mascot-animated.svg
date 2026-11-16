@@ -1,0 +1,70 @@
+<svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TEC mascot">
+<style>.tec-body { transform-origin: 209px 269px; }
+.tec-face { transform-origin: 208px 177px; }
+.tec-coolHand { transform-origin: 123px 198px; }
+.tec-thermometer { transform-origin: 295px 208px; }
+.tec-warmth { transform-origin: 350px 76px; }
+@media (prefers-reduced-motion: no-preference){
+  .tec-body { animation: breathe 5.8s ease-in-out infinite; }
+  .tec-face { animation: look 6.7s ease-in-out -.8s infinite; }
+  .tec-coolHand { animation: wave 4.6s ease-in-out -.6s infinite; }
+  .tec-thermometer { animation: balance 5.4s ease-in-out -1.2s infinite; }
+  .tec-warmth { animation: rise 3.4s ease-in-out infinite; }
+}
+@keyframes breathe { 0%,100% { transform: translateY(1px) rotate(-.6deg); } 50% { transform: translateY(-4px) rotate(.7deg); } }
+@keyframes look { 0%,100% { transform: translateX(-1px); } 50% { transform: translateX(1.5px); } }
+@keyframes wave { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(4deg); } }
+@keyframes balance { 0%,100% { transform: rotate(3deg); } 50% { transform: rotate(-3deg); } }
+@keyframes rise { 0%,100% { transform: translateY(1px); opacity: .6; } 50% { transform: translateY(-4px); opacity: 1; } }
+</style>
+      <g stroke="#34483f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="212" cy="300" rx="116" ry="9" fill="#34483f" opacity=".09" stroke="none" />
+        <path d="M64 301h292" stroke="#9da88f" stroke-width="2.5" />
+        <path d="M163 264v18m84-18v18" stroke-width="12" />
+        <path d="M167 278q-23-3-28 10-2 9 11 9h23l1-15Zm76 0q23-3 28 10 2 9-11 9h-23l-1-15Z" fill="#f6e9c8" />
+        <g class="tec-body">
+          <path d="M164 98V80q0-13 13-13h60q13 0 13 13v18" fill="#ead59f" />
+          <path d="M179 88v-6h57v6" stroke-width="3" />
+          <rect x="119" y="96" width="178" height="173" rx="39" fill="#8fb5a4" />
+          <path d="M279 112q16 13 16 32v87q0 38-35 38H156q-21 0-30-15 19 7 39 7h86q27 0 27-27Z" fill="#76a18e" stroke="none" />
+          <path d="M134 137q2-25 27-26h47" stroke="#cfe1bf" stroke-width="7" />
+          <rect x="140" y="133" width="136" height="86" rx="24" fill="#f5e8c8" stroke-width="3.5" />
+          <g class="tec-face">
+            <ellipse cx="181" cy="169" rx="5" ry="8" fill="#34483f" stroke="none" />
+            <ellipse cx="235" cy="169" rx="5" ry="8" fill="#34483f" stroke="none" />
+            <circle cx="182" cy="166" r="1.6" fill="#fff8e7" stroke="none" />
+            <circle cx="236" cy="166" r="1.6" fill="#fff8e7" stroke="none" />
+            <path d="M197 185q11 12 22 0" stroke-width="3.5" />
+            <ellipse cx="165" cy="186" rx="8" ry="4.5" fill="#e89b80" stroke="none" />
+            <ellipse cx="251" cy="186" rx="8" ry="4.5" fill="#e89b80" stroke="none" />
+          </g>
+          <path d="M157 238h31m-31 10h31" stroke="#456957" stroke-width="3" />
+          <circle cx="247" cy="242" r="12" fill="#e9c579" stroke-width="3" />
+          <path d="m247 242 4-5" stroke-width="3" />
+          <g class="tec-coolHand">
+            <path d="M123 198q-33 7-43-22" stroke-width="10" />
+            <path d="M76 181q-15-3-13-14 1-10 13-8l8 6 1 12Z" fill="#f5e8c8" stroke-width="3.5" />
+            <g transform="translate(71 128)" stroke="#77aab0" stroke-width="3.5">
+              <path d="M0-25v50M-22-13l44 26M-22 13l44-26M-7-20l7 7 7-7M-7 20l7-7 7 7M-21-4l9-3-2-10M21 4l-9 3 2 10M-14 17l2-10-9-3M14-17 12-7l9 3" />
+            </g>
+          </g>
+          <g class="tec-thermometer">
+            <path d="M295 208q25 6 30-11" stroke-width="10" />
+            <g transform="rotate(12 326 183)">
+              <path d="M314 172V98q0-13 12-13t12 13v74a23 23 0 1 1-24 0Z" fill="#fff3d5" stroke-width="3.5" />
+              <path d="M326 112v76" stroke="#e99b7b" stroke-width="7" />
+              <circle cx="326" cy="193" r="12" fill="#e99b7b" stroke="none" />
+              <path d="M334 112h5m-5 17h5m-5 17h5" stroke-width="2" />
+            </g>
+            <path d="M316 198q15-9 20 3 3 11-10 15l-10-3Z" fill="#f5e8c8" stroke-width="3.5" />
+          </g>
+        </g>
+        <g stroke="#9da88f" stroke-width="2.5">
+          <path d="M327 55v13m-6-6h12M99 244h10m-5-5v10" />
+          <path d="M107 77q-10-10-20-1m20 10q-6-6-12-1" />
+        </g>
+        <g class="tec-warmth" stroke="#d99972" stroke-width="3">
+          <path d="M348 75q-6-7 0-14m13 18q-6-7 0-14" />
+        </g>
+      </g>
+    </svg>

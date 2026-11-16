@@ -1,0 +1,132 @@
+@import "../vendor/tec-ui/styles.css";
+
+/* Native environment; public component styles have a single owner in vendor. */
+html,body,#root{min-height:100%;margin:0}
+body{background:#f3f1e9}
+.qchip-tec.app-shell{min-height:100dvh}
+.qchip-tec .native-expand{order:1}
+.qchip-tec .curve-panel>.panel-title{margin-bottom:14px;flex-wrap:wrap}
+.qchip-tec .curve-panel .chart-actions{flex-wrap:wrap}
+.qchip-tec .curve-panel .axis-toggle{min-height:40px;white-space:nowrap}
+@media(max-width:960px){
+ .qchip-tec .detail-layout{grid-template-columns:minmax(0,1fr)}
+ .qchip-tec .detail-layout>.curve-panel{height:auto}
+ .qchip-tec .detail-layout .chart{height:430px;min-height:280px;flex:none}
+ .qchip-tec .detail-sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+}
+@media(max-width:550px){
+ .qchip-tec .detail-sidebar{display:flex}
+ .qchip-tec .detail-layout .chart{height:370px}
+ .qchip-tec .authority-cloudsim{flex-shrink:0;padding-bottom:10px}
+ .qchip-tec .authority-cloudsim>.authority-label{display:inline}
+ .qchip-tec .authority-cloudsim .authority-local{max-width:min(240px,45vw)}
+ .qchip-tec .footer-end{justify-content:flex-start}
+}
+.qchip-tec.app-shell.chart-only{position:fixed;inset:0;z-index:100;background:var(--surface);overflow:auto}
+.qchip-tec.chart-only > :not(main),.qchip-tec.chart-only main > :not(.detail-layout),.qchip-tec.chart-only .detail-sidebar,.qchip-tec.chart-only .recording-bar{display:none}
+.qchip-tec.chart-only main{max-width:none;width:100%;height:100%;margin:0;padding:0}
+.qchip-tec.chart-only .detail-layout{display:block;height:100%;min-height:300px}
+.qchip-tec.chart-only .detail-layout > .curve-panel{height:100%;min-height:0;border:0;border-radius:0;padding:20px 24px 0}
+.qchip-tec.chart-only .curve-panel > .panel-title{flex-shrink:0;margin-bottom:8px}
+.qchip-tec.chart-only .detail-layout .chart{flex:1;min-height:160px;height:auto}
+.qchip-tec.chart-only .chart-stats{flex-shrink:0}
+@media(max-width:550px),(max-height:480px){
+  .qchip-tec.chart-only .detail-layout > .curve-panel{padding:12px 14px 0}
+  .qchip-tec.chart-only .curve-panel > .panel-title{margin-bottom:4px}
+}
+.workspace-bar{flex-wrap:wrap;column-gap:16px;row-gap:8px}
+.qchip-tec .workspace-start{display:flex;align-items:center;flex-wrap:wrap;column-gap:20px;row-gap:8px;min-width:0}
+.qchip-tec .workspace-device{font-size:13px;color:var(--muted);white-space:nowrap;padding-bottom:15px;max-width:min(32ch,calc(100vw - 64px));min-width:0;overflow:hidden;text-overflow:ellipsis}
+.qchip-tec .workspace-start nav{min-width:0;flex-wrap:wrap;row-gap:8px}
+.qchip-tec .workspace-end{display:flex;align-items:center;gap:12px;margin-left:auto;padding-bottom:12px;min-width:0;max-width:100%}
+.qchip-tec .workspace-end .authority{padding-bottom:0;margin-left:0;min-width:0}
+.qchip-tec .workspace-end .authority>.authority-label{display:inline;white-space:nowrap}
+.qchip-tec .workspace-end .authority-local{max-width:min(240px,30vw)}
+@media(max-width:620px){
+ .qchip-tec .workspace-start{width:100%;column-gap:12px}
+ .qchip-tec .workspace-device{font-size:12px;padding-bottom:12px}
+ .qchip-tec .workspace-start nav{column-gap:16px}
+}
+.authority-cloudsim{gap:9px;max-width:100%;margin-left:auto}
+.workspace-bar .authority-cloudsim>.authority-label{display:inline;white-space:nowrap}
+.authority-cloudsim .authority-local{min-width:0;max-width:min(240px,35vw)}
+.authority-cloudsim .authority-local>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.authority-action{min-height:32px;min-width:65px;padding:5px 11px;white-space:nowrap;font-size:12px}
+.authority-action.is-connected:disabled{opacity:1;background:var(--surface-soft);border-color:var(--line);color:var(--muted);cursor:default}
+.footer-end{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px}
+.cloud-link-state{display:inline-flex;align-items:center;gap:6px;color:var(--green)}
+.cloud-link-state>i{width:6px;height:6px;border-radius:50%;background:currentColor}
+.cloud-link-state.offline{color:var(--muted)}
+.overclock-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.overclock-heading>span{display:inline-flex;align-items:center;gap:8px}
+.overclock-heading input{width:21px;height:21px;accent-color:var(--green)}
+.overclock-options{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:20px}
+.overclock-options select{width:100%;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);padding:12px 14px;font:inherit}
+.overclock-options .settings-label{margin-top:8px}
+.overclock-options .range-ticks{margin-top:-6px}
+.qchip-tec .page-heading{display:flex;align-items:center;gap:18px;margin:16px 0}
+.qchip-tec .page-heading>div:first-child{flex:1;min-width:0}
+.qchip-tec .heading-mascot{object-fit:contain;flex:none;width:100px;height:76px}
+.qchip-tec .page-heading .device-actions{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.qchip-tec .cloud-bridge-status{white-space:nowrap;font-size:12px}
+.qchip-tec .cloud-bridge-status.pending{color:var(--ink)}
+.qchip-tec .cloud-bridge-status.pending i{background:var(--brown)}
+.qchip-tec .channel-grid:has(>.channel-card:only-child){grid-template-columns:minmax(0,1fr)}
+@media(max-width:700px){.qchip-tec .page-heading{flex-wrap:wrap;gap:10px}.qchip-tec .heading-mascot{width:78px;height:64px}.qchip-tec .page-heading .device-actions{width:100%;justify-content:flex-end}.qchip-tec .page-heading h1{font-size:26px}}
+/* Lab settings host layout; public component styles remain owned by Mac. */
+.qchip-tec .native-log-storage{min-width:0;font-size:13px}
+.qchip-tec .native-log-storage .settings-field{margin:20px 0}
+.qchip-tec .native-log-storage label{display:flex;align-items:center;gap:8px;font-weight:600}
+.qchip-tec .native-log-storage input[type=text],.qchip-tec .native-log-storage input:not([type]){display:block;box-sizing:border-box;width:100%;min-height:42px;margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-control);background:var(--paper);color:var(--ink);font:inherit}
+.qchip-tec .native-log-summary{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:0 0 16px;color:var(--muted)}
+.qchip-tec .native-log-summary strong{color:var(--ink)}
+.qchip-tec .native-log-storage select{display:block;box-sizing:border-box;width:100%;min-height:42px;margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-control);background:var(--paper);color:var(--ink);font:inherit}
+.qchip-tec .native-log-note{color:var(--muted);font-size:12px;line-height:1.6;margin:12px 0 18px}
+.qchip-tec .native-log-storage.is-compact{padding:20px 0;border-top:1px solid var(--line)}
+.qchip-tec .native-log-storage summary{cursor:pointer;color:var(--green);font-weight:600;padding:10px 0}
+.qchip-tec .native-log-fields{max-width:620px;margin-top:20px}
+.qchip-tec .native-log-storage .field-error{overflow-wrap:anywhere}
+.qchip-tec .device-name-row{display:flex;align-items:center;gap:10px}
+.qchip-tec .device-name-row input{flex:1;min-width:0}
+.qchip-tec .device-name-row .button{flex:none;white-space:nowrap}
+.qchip-tec .device-connection-row{display:grid;grid-template-columns:minmax(90px,1fr) minmax(110px,1fr) auto;gap:10px;align-items:end;margin:24px 0}
+.qchip-tec .device-connection-row .settings-field{margin:0}
+.qchip-tec .device-connection-row .button{height:44px;white-space:nowrap}
+.qchip-tec .device-connection-row select{display:block;box-sizing:border-box;width:100%;min-height:44px;margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-control);background:var(--paper);color:var(--ink);font:inherit}
+.qchip-tec .settings-workspace[data-section=device] .settings-layout{flex-basis:450px}
+.qchip-tec .device-connection-row label{font-size:13px}
+.qchip-tec .device-information{border-top:1px solid var(--line);padding-top:18px;margin:24px 0 0;font-size:13px}
+.qchip-tec .device-information>div{display:flex;justify-content:space-between;gap:18px;margin:12px 0}
+.qchip-tec .device-information dt{color:var(--muted)}
+.qchip-tec .device-information dd{margin:0;text-align:right;overflow-wrap:anywhere}
+@media(max-width:450px){.qchip-tec .device-connection-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.qchip-tec .device-connection-row>.button{grid-column:1/-1;justify-self:end}}
+.qchip-tec .settings-workspace{width:min(800px,calc(100vw - 28px));overflow:hidden}
+.qchip-tec .settings-workspace>form{display:flex;flex-direction:column;max-height:calc(100dvh - 42px);padding:24px}
+.qchip-tec .settings-workspace .settings-heading{flex:none}
+.qchip-tec .settings-layout{display:grid;grid-template-columns:164px minmax(0,1fr);gap:28px;min-height:0;flex:1 1 336px;overflow:auto;padding-top:24px}
+.qchip-tec .settings-categories{display:flex;flex-direction:column;gap:4px;align-self:start}
+.qchip-tec .settings-categories button{display:flex;align-items:center;gap:8px;min-height:44px;padding:12px;border:0;border-radius:12px;background:transparent;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.qchip-tec .settings-categories button:hover{background:var(--paper)}
+.qchip-tec .settings-categories button[aria-selected=true]{background:var(--surface-soft);color:var(--green);font-weight:700}
+.qchip-tec .settings-content{min-width:0;padding:4px 4px 8px}
+.qchip-tec .settings-content h3{font-size:17px;margin:0 0 24px;font-weight:700}
+.qchip-tec .settings-content .settings-field:first-of-type{margin-top:0}
+.qchip-tec .settings-switch-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:40px}
+.qchip-tec .settings-workspace .overclock-options{padding:16px 0 0;margin:0 0 28px}
+.qchip-tec .settings-inline-status{font-size:13px;color:var(--muted);margin-top:16px}
+.qchip-tec .settings-workspace .settings-footer{flex:none;margin-top:20px;padding-top:20px}
+.qchip-tec .settings-categories button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.qchip-tec .bridge-pairing{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.qchip-tec .settings-field .bridge-pairing input[type=password]{display:block;box-sizing:border-box;width:100%;margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:var(--radius-control);background:var(--paper);color:var(--ink);font:inherit}
+.qchip-tec .bridge-pairing>.button{min-height:44px}
+.qchip-tec .cloud-link-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.qchip-tec .cloud-link-row>strong{display:inline-flex;align-items:center;gap:8px;font-size:13px}
+.qchip-tec .cloud-link-actions{display:flex;align-items:center;gap:12px;font-size:13px}
+.qchip-tec .cloud-link-actions>.button{min-height:40px}
+@media(max-width:620px){
+ .qchip-tec .settings-workspace>form{padding:20px}
+ .qchip-tec .settings-layout{grid-template-columns:minmax(0,1fr);gap:24px;min-height:0;padding-top:20px}
+ .qchip-tec .settings-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+ .qchip-tec .settings-categories button{padding:10px;font-size:13px}
+ .qchip-tec .settings-content{padding:0 2px 8px}
+}

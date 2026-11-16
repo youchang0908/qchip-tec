@@ -64,6 +64,12 @@ class LegacyUpgradeTests(unittest.TestCase):
         for p,raw in originals.items():self.assertEqual(p.read_bytes(),raw)
         with sqlite3.connect(db) as conn:self.assertEqual(conn.execute('SELECT publisher_id FROM history_dataset').fetchone()[0],publisher)
         self.assertEqual(profile_paths.layout(storage.base,host='a'*64).native,self.native)
+        relaunched=profile_paths.layout(install_root=storage.install,host='a'*64,frozen=True)
+        self.assertEqual(relaunched.native,self.native)
+        self.assertEqual(relaunched.history,self.history)
+        copied_pc=profile_paths.layout(install_root=storage.install,host='b'*64,frozen=True)
+        self.assertIsNone(copied_pc.legacy_local)
+        self.assertNotEqual(copied_pc.bridge,bridge)
         with self.assertRaises(ValueError):profile_paths.layout(storage.base,host='b'*64,bind=True)
 
     def test_foreign_profile_cannot_select_this_users_bridge_and_defaults_stay_portable(self):

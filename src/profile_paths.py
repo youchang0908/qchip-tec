@@ -21,6 +21,7 @@ class Layout:
     key:str
     csv:Path
     legacy_local:Path=None
+    remember_legacy:bool=False
     @property
     def native(self):return self.base if self.legacy_local else self.base/'native'
     @property
@@ -41,6 +42,10 @@ class Layout:
                     raise ValueError('旧配置属于另一台电脑；请显式导入并重新配对')
             else:
                 with marker.open('x',encoding='utf-8') as file:json.dump({'schema':1,'machine_key':self.key},file)
+            if self.remember_legacy:
+                selection=self.install/'data/legacy-profile.json'
+                selection.parent.mkdir(parents=True,exist_ok=True)
+                atomic_json(selection,{'schema':1,'machine_key':self.key,'native':str(self.native)})
             return self
         self.base.mkdir(parents=True,exist_ok=True)
         marker=self.base/'portable-host.json'
@@ -70,6 +75,19 @@ def layout(explicit=None,install_root=None,host=None,frozen=None,bind=False):
     if explicit is None and not frozen:raise ValueError('源码/开发模式必须显式指定 --data-dir')
     install=Path(install_root or Path(sys.executable).parent).resolve()
     key=host or machine_key()
+    selection=install/'data/legacy-profile.json'
+    if explicit is None and frozen and selection.exists():
+        if selection.stat().st_size>8192:raise ValueError('原地升级目录记录过大')
+        saved=json.loads(selection.read_text(encoding='utf-8'))
+        if not isinstance(saved,dict) or set(saved)!={'schema','machine_key','native'} or saved['schema']!=1:
+            raise ValueError('原地升级目录记录无效')
+        # A copied install must use this new computer's fresh portable profile.
+        if saved['machine_key']==key:
+            if not isinstance(saved['native'],str) or not Path(saved['native']).is_absolute():
+                raise ValueError('原地升级配置路径无效')
+            explicit=saved['native']
+            if not (Path(explicit)/'.runtime/settings.json').is_file():
+                raise ValueError('原地升级的旧配置不在原位置，停止启动，避免加载空配置')
     # Keep Windows paths short; the full digest in portable-host.json still
     # fences a hypothetical shortened-directory collision before loading data.
     base=Path(explicit).resolve() if explicit is not None else install/'data/machines'/key[:16]
@@ -91,7 +109,7 @@ def layout(explicit=None,install_root=None,host=None,frozen=None,bind=False):
         if marker.exists() and json.loads(marker.read_text(encoding='utf-8'))!={'schema':1,'machine_key':key}:
             raise ValueError('旧配置属于另一台电脑；请显式导入并重新配对')
         settings=json.loads((base/'.runtime/settings.json').read_text(encoding='utf-8'))
-        result=Layout(base,install,key,Path(settings.get('recording_dir',str(base/'TEC_data'))),local)
+        result=Layout(base,install,key,Path(settings.get('recording_dir',str(base/'TEC_data'))),local,bool(frozen))
         return result.bind() if bind else result
     standard=base==install/'data/machines'/key[:16]
     result=Layout(base,install,key,install/'log' if standard else base/'log')

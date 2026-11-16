@@ -8,6 +8,8 @@
 
 软件与云桥接共用版本号 1.0.1，公共 UI 为 1.4.3。更新只替换程序文件；重启会短暂停止采集，需重新连接设备，不重放温度、PID 或输出参数。
 
-Author: Chang You  
-Co-author: Codex  
+Author: Chang You
+
+Co-author: Codex
+
 License: MIT；第三方组件保留各自许可。

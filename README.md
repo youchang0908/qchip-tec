@@ -37,7 +37,7 @@ Qchip TEC is a Windows desktop application for Arroyo temperature controllers, w
 
 ### 从终端安装（Windows PowerShell）
 
-在 Windows PowerShell 中运行一行命令即可安装。推荐短入口：
+首次安装时，先在希望存放软件的文件夹里打开 Windows PowerShell，再运行下面的一行命令。推荐短入口：
 
 ```powershell
 irm https://cloud.youchang.space/install.ps1 | iex
@@ -51,15 +51,19 @@ irm https://raw.githubusercontent.com/youchang0908/qchip-tec/main/install.ps1 | 
 
 脚本会下载最新正式版本，校验程序包和文件哈希，在当前 PowerShell 工作目录创建 `Qchip-TEC` 文件夹，创建开始菜单入口并启动。无需管理员权限、Python、Git 或 GitHub CLI；设备通信驱动和 WebView2 Runtime 仍需具备。
 
+例如，当前目录是 `D:\Apps`，就会安装到 `D:\Apps\Qchip-TEC`。新安装的配置与历史在该文件夹的 `data` 下，默认 CSV 日志在 `log` 下。
+
 也可指定安装目录；`-InstallDir` 是完整安装路径，不会再套一层文件夹：
 
 ```powershell
 & ([scriptblock]::Create((irm https://cloud.youchang.space/install.ps1))) -InstallDir 'D:\Apps\Qchip-TEC'
 ```
 
-已有安装不会被覆盖，后续更新使用软件内的“检查更新”。两个入口都读取 GitHub 根目录的同一份 `install.ps1`，程序包来自同一仓库的 GitHub Releases；短网址只作固定跳转，不另外托管脚本。
+这两条命令用于首次安装；目标文件夹已存在时，脚本会退出并保留原文件，不能用它覆盖升级。后续更新使用软件内的“检查更新”。两个入口都读取 GitHub 根目录的同一份 `install.ps1`，程序包来自同一仓库的 GitHub Releases；短网址只作固定跳转，不另外托管脚本。
 
 ## 更新软件
+
+1.0.0 的检查更新若显示 `FORBIDDEN`，请按[保留日志与配对的手动升级步骤](docs/UPGRADE_1.0.0_TO_1.0.1.md)先更新到1.0.1。首次启动需指定原配置目录，之后会记住；该问题已在1.0.1修复。
 
 在设置中点击“检查更新”。正常采集和记录日志时也可检查并下载新版本。下载并校验完成后，点击“更新并重启”，确认“更新的时候会暂时中断采集，勿谓言之不预！”后才开始更新。取消则继续运行。更新只替换程序文件，不覆盖日志、配对信息或本机设置。
 

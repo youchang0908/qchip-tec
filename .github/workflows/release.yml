@@ -29,6 +29,9 @@ jobs:
       PYTHONPATH: src
       PYTHONUTF8: '1'
     steps:
+      - name: Preserve exact source bytes on Windows checkout
+        shell: pwsh
+        run: git config --global core.autocrlf false
       - name: Check out the released tag
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -80,6 +83,11 @@ jobs:
           foreach ($name in @('Qchip-TEC-Windows-x64.zip', 'update.json', 'SHA256SUMS.txt')) {
             if (-not (Test-Path (Join-Path artifacts $name))) { throw "Missing release asset: $name" }
           }
+      - name: Show packaging diagnostics on failure
+        if: failure()
+        shell: pwsh
+        run: |
+          if (Test-Path artifacts/build.log) { Get-Content artifacts/build.log -Tail 100 }
       - name: Attach the verified program and manifest to this release
         shell: pwsh
         env:

@@ -2,7 +2,7 @@
 import hashlib,json,re,zipfile
 from pathlib import Path
 
-ROOT_FILES={'install.ps1','.gitignore','AGENTS.md','README.md','LICENSE','THIRD_PARTY_NOTICES.md','package.json','package-lock.json','requirements-build.lock'}
+ROOT_FILES={'install.ps1','.gitattributes','.gitignore','AGENTS.md','README.md','LICENSE','THIRD_PARTY_NOTICES.md','package.json','package-lock.json','requirements-build.lock'}
 ROOT_DIRS={'src','tests','scripts','packaging','docs','.github'}
 SUFFIXES={'.ps1','.py','.js','.mjs','.jsx','.ts','.json','.jsonc','.css','.html','.svg','.ico','.md','.txt','.lock','.yml','.yaml','.spec'}
 

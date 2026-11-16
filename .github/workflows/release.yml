@@ -3,30 +3,36 @@ name: Build Windows Release
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing stable release tag to build
+        required: true
+        default: v1.0.0
 
 permissions:
   contents: read
 
 concurrency:
-  group: tec-release-${{ github.event.release.tag_name }}
+  group: tec-release-${{ github.event.release.tag_name || inputs.tag }}
   cancel-in-progress: false
 
 jobs:
   windows-release:
-    if: ${{ !github.event.release.prerelease }}
+    if: ${{ github.event_name == 'workflow_dispatch' || !github.event.release.prerelease }}
     runs-on: windows-2022
     timeout-minutes: 30
     permissions:
       contents: write
     env:
-      RELEASE_TAG: ${{ github.event.release.tag_name }}
+      RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
       PYTHONPATH: src
       PYTHONUTF8: '1'
     steps:
       - name: Check out the released tag
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
-          ref: refs/tags/${{ github.event.release.tag_name }}
+          ref: refs/tags/${{ env.RELEASE_TAG }}
           persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
@@ -37,6 +43,14 @@ jobs:
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '22'
+      - name: Use an unambiguous Windows temp directory
+        shell: pwsh
+        run: |
+          $tempRoot = Join-Path $env:RUNNER_TEMP 'qchip-tec'
+          New-Item -ItemType Directory -Path $tempRoot -Force | Out-Null
+          foreach ($name in @('TEMP', 'TMP', 'TMPDIR')) {
+            "$name=$tempRoot" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          }
       - name: Install locked build dependencies
         shell: pwsh
         run: |

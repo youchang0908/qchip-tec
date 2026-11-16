@@ -1,3 +1,5 @@
+> 这是发布前的候选记录；发布后的验收结果见 [RELEASE_ACCEPTANCE_1.0.0.md](RELEASE_ACCEPTANCE_1.0.0.md)。
+
 # 1.0.0 候选验证范围
 
 状态：READY for review；未公开仓库/Release，未安装到实验设备。

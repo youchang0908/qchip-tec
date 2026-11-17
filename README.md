@@ -2,7 +2,7 @@
 
 <img width="2352" height="1369" alt="image" src="https://github.com/user-attachments/assets/c1753ce5-6560-4edc-a2bc-02a00ceb99f6" />
 
-一个vibe coding的用于 Arroyo TEC 的 Windows 桌面温控软件。把实时读数、温度曲线、通道控制和日志放在同一个界面里，也可以通过云桥接远程查看和操作设备，美观性和易用性爆杀Arroyo原厂软件。赞美AI大人。
+一个vibe coding炮制的用于 Arroyo TEC 的 Windows 桌面温控软件。把实时读数、温度曲线、通道控制和日志放在同一个界面里，也可以通过云桥接远程查看和操作设备，美观性和易用性爆杀Arroyo原厂软件。赞美AI大人。
 
 **Author:** Chang You（游畅）  
 **Co-author:** Codex
